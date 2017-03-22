@@ -6,9 +6,117 @@ namespace BlogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM Entity
+ * @ORM\Table(name="billet")
+ * @ORM\Entity(repositoryClass="BlogBundle\Entity\BilletRepository")
  */
 class Billet
 {
+    /**
+     * @var int
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
 
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="date", type="date")
+     */
+    protected $date;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="dateUpdate", type="date", nullable=true)
+     */
+    protected $dateUpadte;
+
+    /**
+     * @var string
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    protected $title;
+
+    /**
+     * @var string
+     * @ORM\Column(name="content", type="text")
+     */
+    protected $content;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate(\DateTime $date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateUpadte()
+    {
+        return $this->dateUpadte;
+    }
+
+    /**
+     * @param mixed $dateUpadte
+     */
+    public function setDateUpadte(\DateTime $dateUpadte)
+    {
+        $this->dateUpadte = $dateUpadte;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
 }
