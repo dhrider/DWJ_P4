@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="billet")
- * @ORM\Entity(repositoryClass="BlogBundle\Entity\BilletRepository")
+ * @ORM\Entity(repositoryClass="BlogBundle\Repository\BilletRepository")
  */
 class Billet
 {
@@ -62,14 +62,6 @@ class Billet
     public function getDate()
     {
         return $this->date;
-    }
-
-    /**
-     * @param mixed $date
-     */
-    public function setDate(\DateTime $date)
-    {
-        $this->date = $date;
     }
 
     /**

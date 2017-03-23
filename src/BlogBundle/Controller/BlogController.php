@@ -2,12 +2,24 @@
 
 namespace BlogBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use BlogBundle\Entity\Billet;
+
 
 class BlogController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BlogBundle:Default:index.html.twig');
+        $billets = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BlogBundle:Billet')
+            ->findAll()
+        ;
+
+        return $this->render('BlogBundle::index.html.twig', array(
+            'billets' => $billets
+        ));
     }
 }

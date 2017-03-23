@@ -1,0 +1,8 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    {%  for billet in billets %}
+        <h3>{{ billet.title }}</h3>
+        <p>{{ billet.content }}</p>
+    {% endfor %}
+{% endblock %}

@@ -24,7 +24,7 @@ class Comment
     protected $date;
 
     /**
-     * @ORM\Column(name="dateUpdate", type="datetime", nullable=true)
+     * @ORM\Column(name="dateUpdate", type="datetime")
      */
     protected $dateUpdate;
 
@@ -58,14 +58,6 @@ class Comment
     public function getDate()
     {
         return $this->date;
-    }
-
-    /**
-     * @param mixed $date
-     */
-    public function setDate(\DateTime $date)
-    {
-        $this->date = $date;
     }
 
     /**
