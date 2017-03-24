@@ -92,6 +92,7 @@ class Comment
         $this->content = $content;
     }
 
+
     public function setBillet(Billet $billet)
     {
         $this->billet = $billet;
@@ -99,8 +100,12 @@ class Comment
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getBillet()
     {
         return $this->billet;
     }
+
 }

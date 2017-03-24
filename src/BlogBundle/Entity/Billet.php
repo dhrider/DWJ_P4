@@ -45,7 +45,7 @@ class Billet
     protected $content;
 
     /**
-     * @ORM\OneToMany(targetEntity="BlogBundle\Entity\Comment", mappedBy="billet")
+     * @ORM\OneToMany(targetEntity="BlogBundle\Entity\Comment", mappedBy="billet", cascade={"all"}, fetch="EAGER", orphanRemoval=true)
      */
     private $comments;
 
@@ -55,6 +55,9 @@ class Billet
         $this->comments = new ArrayCollection();
     }
 
+    /**
+     * @param Comment $comment
+     */
     public function addComment(Comment $comment)
     {
         $this->comments[] = $comment;
@@ -67,9 +70,23 @@ class Billet
         $this->comments->removeElement($comment);
     }
 
-    public function getComment()
+    /**
+     * @return ArrayCollection
+     */
+    public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * @param ArrayCollection $comments
+     */
+    public function setComments($comments)
+    {
+        foreach ($comments as &$comment)
+        {
+            $comment->setBillet($this);
+        }
     }
 
     /**

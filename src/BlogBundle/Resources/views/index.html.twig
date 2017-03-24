@@ -4,8 +4,8 @@
     {%  for billet in billets %}
         <h3>{{ billet.title }}</h3>
         <p>{{ billet.content }}</p>
-        {%  for com in billet.comment %}
-            <p>{{ com.content }}</p>
+        {%  for comment in billet.comments %}
+            <p>{{ comment.content }}</p>
         {% endfor %}
     {% endfor %}
 {% endblock %}
