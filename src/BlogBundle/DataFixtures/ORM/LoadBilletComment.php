@@ -4,6 +4,7 @@
 namespace BlogBundle\DataFixtures\ORM;
 
 use BlogBundle\Entity\Billet;
+use BlogBundle\Entity\Comment;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -38,9 +39,12 @@ class LoadBilletComment implements FixtureInterface
             )
         );
 
+
+
         foreach ($billets as $billet)
         {
             $newBillet = new Billet();
+            $newComment = new Comment();
 
             foreach ($billet as $cle => $valeur)
             {
@@ -56,9 +60,16 @@ class LoadBilletComment implements FixtureInterface
                         $newBillet->setContent($valeur);
                         break;
                 }
+
+                $newComment->setDateUpdate(new \DateTime());
+                $newComment->setContent("Ceci est le commentaire pour l'".$newBillet->getTitle());
+                $newComment->setBillet($newBillet);
+
+                $newBillet->addComment($newComment);
             }
 
             $manager->persist($newBillet);
+            $manager->persist($newComment);
         }
 
         $manager->flush();

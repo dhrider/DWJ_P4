@@ -4,6 +4,7 @@
 namespace BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Table(name="billet")
@@ -43,9 +44,32 @@ class Billet
      */
     protected $content;
 
+    /**
+     * @ORM\OneToMany(targetEntity="BlogBundle\Entity\Comment", mappedBy="billet")
+     */
+    private $comments;
+
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->comments = new ArrayCollection();
+    }
+
+    public function addComment(Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        $comment->setBillet($this);
+    }
+
+    public function removeComment(Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    public function getComment()
+    {
+        return $this->comments;
     }
 
     /**

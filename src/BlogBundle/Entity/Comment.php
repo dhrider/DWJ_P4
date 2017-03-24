@@ -34,7 +34,7 @@ class Comment
     protected $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Billet")
+     * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Billet", inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
     private $billet;
