@@ -44,4 +44,14 @@ class BlogController extends Controller
             'billets' => $billets
         ));
     }
+
+    public function billetsAdminAction()
+    {
+        return $this->render('BlogBundle::billetsAdmin.html.twig');
+    }
+
+    public function commentsAdminAction()
+    {
+        return $this->render('BlogBundle::commentsAdmin.html.twig');
+    }
 }

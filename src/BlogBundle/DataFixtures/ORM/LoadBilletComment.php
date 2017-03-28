@@ -93,8 +93,6 @@ class LoadBilletComment implements FixtureInterface
             )
         );
 
-
-
         foreach ($billets as $billet)
         {
             $newBillet = new Billet();

@@ -7,3 +7,11 @@ blog_billet:
     defaults: { _controller: BlogBundle:Blog:billet }
     requirements:
         id: '\d+'
+
+blog_billetAdmin:
+    path:    /billetsAdmin
+    defaults: { _controller: BlogBundle:Blog:billetsAdmin }
+
+blog_commentsAdmin:
+    path:    /commentsAdmin
+    defaults: { _controller: BlogBundle:Blog:commentsAdmin }
