@@ -2,6 +2,7 @@
 
 namespace BlogBundle\Controller;
 
+use Doctrine\ORM\Repository\RepositoryFactory;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Billet;
@@ -11,12 +12,7 @@ class BlogController extends Controller
 {
     public function indexAction()
     {
-        $billets = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('BlogBundle:Billet')
-            ->findAll()
-        ;
+        $billets = $this->findAll('Billet');
 
         return $this->render('BlogBundle::index.html.twig', array(
             'billets' => $billets
@@ -32,12 +28,7 @@ class BlogController extends Controller
             ->find($request->get('id'))
         ;
 
-        $billets = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('BlogBundle:Billet')
-            ->findAll()
-        ;
+        $billets = $this->findAll('Billet');
 
         return $this->render('BlogBundle::billet.html.twig', array(
             'billet' => $billet,
@@ -45,13 +36,33 @@ class BlogController extends Controller
         ));
     }
 
-    public function billetsAdminAction()
+    public function adminBilletsAction()
     {
-        return $this->render('BlogBundle::billetsAdmin.html.twig');
+        $billets = $this->findAll('Billet');
+
+        return $this->render('BlogBundle::adminBillets.html.twig', array(
+            'billets' => $billets
+        ));
     }
 
-    public function commentsAdminAction()
+    public function adminCommentsAction()
     {
-        return $this->render('BlogBundle::commentsAdmin.html.twig');
+        $comments = $this->findAll('Comment');
+
+        return $this->render('BlogBundle::adminComments.html.twig', array(
+            'comments' => $comments
+        ));
+    }
+
+    public function findAll($table)
+    {
+        $result = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BlogBundle:'.$table)
+            ->findAll()
+        ;
+
+        return $result;
     }
 }

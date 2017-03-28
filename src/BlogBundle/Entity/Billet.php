@@ -60,9 +60,9 @@ class Billet
      */
     public function addComment(Comment $comment)
     {
-        $this->comments[] = $comment;
-
         $comment->setBillet($this);
+
+        $this->comments[] = $comment;
     }
 
     public function removeComment(Comment $comment)
