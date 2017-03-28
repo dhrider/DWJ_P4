@@ -22,4 +22,18 @@ class BlogController extends Controller
             'billets' => $billets
         ));
     }
+
+    public function billetAction(Request $request)
+    {
+        $billet = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BlogBundle:Billet')
+            ->find($request->get('id'))
+        ;
+
+        return $this->render('BlogBundle::billet.html.twig', array(
+            'billet' => $billet
+        ));
+    }
 }

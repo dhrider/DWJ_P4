@@ -1,3 +1,9 @@
 blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Blog:index }
+
+blog_billet:
+    path:     /billet/{id}
+    defaults: { _controller: BlogBundle:Blog:billet }
+    requirements:
+        id: '\d+'

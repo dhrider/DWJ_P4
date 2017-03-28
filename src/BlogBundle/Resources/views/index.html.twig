@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10" id="billetsChronologie">
                 {%  for billet in billets %}
-                    <h3>{{ billet.title }}</h3>
+                    <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h3>{{ billet.title }}</h3></a>
                     <h6>Publié le : {{ billet.date | date('d-m-Y') }}</h6>
                     <p>{{ billet.content }}</p>
                     <a href="#">{{ billet.getNumberOfComments }} commentaire(s)</a>
