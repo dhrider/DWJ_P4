@@ -152,4 +152,9 @@ class Billet
     {
         $this->content = $content;
     }
+
+    public function getNumberOfComments()
+    {
+        return count($this->comments);
+    }
 }

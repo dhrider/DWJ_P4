@@ -44,7 +44,7 @@ class LoadBilletComment implements FixtureInterface
         foreach ($billets as $billet)
         {
             $newBillet = new Billet();
-            $newComment = new Comment();
+            //$newComment = new Comment();
 
             foreach ($billet as $cle => $valeur)
             {
@@ -61,15 +61,15 @@ class LoadBilletComment implements FixtureInterface
                         break;
                 }
 
-                $newComment->setDateUpdate(new \DateTime());
-                $newComment->setContent("Ceci est le commentaire pour l'".$newBillet->getTitle());
-                $newComment->setBillet($newBillet);
+                //$newComment->setDateUpdate(new \DateTime());
+                //$newComment->setContent("Ceci est le commentaire pour l'".$newBillet->getTitle());
+               //$newComment->setBillet($newBillet);
 
-                $newBillet->addComment($newComment);
+                //$newBillet->addComment($newComment);
             }
 
             $manager->persist($newBillet);
-            $manager->persist($newComment);
+            //$manager->persist($newComment);
         }
 
         $manager->flush();

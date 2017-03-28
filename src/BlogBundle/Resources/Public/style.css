@@ -7,6 +7,10 @@ body {
     background-color: #E3E2E2;
 }
 
+.icon-bar {
+    background-color: black;
+}
+
 .navbar-brand {
     margin: 0;
 }
@@ -17,6 +21,22 @@ body {
 
 .navbar-nav a {
     color: black;
+}
+
+#content {
+    margin-bottom: 20px;
+}
+
+.comments {
+    display: flex;
+}
+
+#listeBillets {
+    text-align: center;
+}
+
+#listeComments h4 {
+    text-align: center;
 }
 
 .footer {
