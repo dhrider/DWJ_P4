@@ -27,8 +27,8 @@ body {
     margin-bottom: 20px;
 }
 
-.comments {
-    display: flex;
+#billetsChronologie h3 {
+    margin-top: 10px;
 }
 
 #listeBillets {

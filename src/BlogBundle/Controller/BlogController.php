@@ -32,8 +32,16 @@ class BlogController extends Controller
             ->find($request->get('id'))
         ;
 
+        $billets = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BlogBundle:Billet')
+            ->findAll()
+        ;
+
         return $this->render('BlogBundle::billet.html.twig', array(
-            'billet' => $billet
+            'billet' => $billet,
+            'billets' => $billets
         ));
     }
 }

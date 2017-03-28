@@ -1,6 +1,9 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <h2>{{ billet.title }}</h2>
-    <p>{{ billet.content }}</p>
+    <div class="col-md-10" id="billetEntier">
+        <h2>{{ billet.title }}</h2>
+        <p style="text-align: justify">{{ billet.content }}</p>
+    </div>
+    {{ include("@Blog/billetAside.html.twig") }}
 {% endblock %}
