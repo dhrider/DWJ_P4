@@ -14,17 +14,47 @@
 
     <body>
         <div class="container-fluid">
-            <div class="header">
-                <h1>Blog de Jean Forteroche</h1>
-            </div>
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-target">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h2 class="navbar-brand">Blog de Jean Forteroche</h2>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse-target">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-cog"></span>Administrateur</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span> Welcome<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Log out</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span> Not connected <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Log in</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-            <div class="container-fluid col-md-12" id="content">
+            <div class="container-fluid col-md-offset-1 col-md-10" id="content">
                 {% block body %}{% endblock %}
                 {% block javascripts %}{% endblock %}
             </div>
 
-            <div class="footer">
-                <p id="copyright" class="col-md-12">COPYRIGHT - 2017</p>
+            <div class="footer col-md-12">
+                <p id="copyright">COPYRIGHT - 2017</p>
             </div>
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

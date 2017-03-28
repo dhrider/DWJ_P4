@@ -1,0 +1,28 @@
+body {
+    width: 100%;
+    height: auto;
+}
+
+.navbar {
+    background-color: #E3E2E2;
+}
+
+.navbar-brand {
+    margin: 0;
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.navbar-nav a {
+    color: black;
+}
+
+.footer {
+    background-color: #E3E2E2;
+}
+
+.footer p {
+    text-align: center;
+}
