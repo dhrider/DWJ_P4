@@ -22,13 +22,13 @@ class Billet
 
     /**
      * @var \DateTime
-     * @ORM\Column(name="date", type="date")
+     * @ORM\Column(name="date", type="datetime")
      */
     protected $date;
 
     /**
      * @var \DateTime
-     * @ORM\Column(name="dateUpdate", type="date", nullable=true)
+     * @ORM\Column(name="dateUpdate", type="datetime", nullable=true)
      */
     protected $dateUpadte;
 

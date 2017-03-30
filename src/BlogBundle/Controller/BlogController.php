@@ -2,7 +2,6 @@
 
 namespace BlogBundle\Controller;
 
-use Doctrine\ORM\Repository\RepositoryFactory;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Billet;
@@ -19,6 +18,20 @@ class BlogController extends Controller
         ));
     }
 
+    public function asideAction()
+    {
+        $billetsCommentsAside = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BlogBundle:Billet')
+            ->findFiveLastTitle()
+        ;
+
+        return $this->render('BlogBundle::billetAside.html.twig', array(
+            'aside' => $billetsCommentsAside
+        ));
+    }
+
     public function billetAction(Request $request)
     {
         $billet = $this
@@ -28,11 +41,11 @@ class BlogController extends Controller
             ->find($request->get('id'))
         ;
 
-        $billets = $this->findAll('Billet');
+        //$billets = $this->findAll('Billet');
+
 
         return $this->render('BlogBundle::billet.html.twig', array(
-            'billet' => $billet,
-            'billets' => $billets
+            'billet' => $billet
         ));
     }
 

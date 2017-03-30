@@ -8,6 +8,10 @@ blog_billet:
     requirements:
         id: '\d+'
 
+blog_admin:
+    path: /admin
+    defaults: { _controller: BlogBundle:Blog:admin }
+
 blog_adminBillets:
     path:    /admin/billets
     defaults: { _controller: BlogBundle:Blog:adminBillets }
@@ -15,3 +19,13 @@ blog_adminBillets:
 blog_adminComments:
     path:    /admin/comments
     defaults: { _controller: BlogBundle:Blog:adminComments }
+
+login:
+    path: /login
+    defaults: { _controller: BlogUserBundle:Security:login}
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
