@@ -2,7 +2,6 @@
 
 namespace BlogBundle\Controller;
 
-use BlogBundle\Form\CommentType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Billet;
@@ -29,7 +28,7 @@ class BlogController extends Controller
             ->findFiveLastTitle()
         ;
 
-        return $this->render('BlogBundle::billetAside.html.twig', array(
+        return $this->render('BlogBundle::aside.html.twig', array(
             'aside' => $billetsCommentsAside
         ));
     }
@@ -56,24 +55,6 @@ class BlogController extends Controller
         ));
     }
 
-    public function addCommentAction(Request $request)
-    {
-
-        $comment = new Comment();
-        $form = $this->get('form.factory')->create(CommentType::class, $comment);
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid())
-        {
-            var_dump($comment);
-            exit;
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($comment);
-            $em->flush();
-        }
-
-        return $this->render('BlogBundle::addComment.html.twig', array(
-           'form' => $form->createView()
-        ));
-    }
 
     public function adminBilletsAction()
     {

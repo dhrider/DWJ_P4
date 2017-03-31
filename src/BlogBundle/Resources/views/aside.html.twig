@@ -1,10 +1,10 @@
-<div class="col-md-2" id="listeBillets">
+<div id="listeBillets">
     <h4>Liste des épisodes</h4>
     {%  for billet in aside %}
         <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h5 style="text-align: left">{{ billet.title }}</h5></a>
     {% endfor %}
 </div>
-<div class="col-md-2" id="listeComments">
+<div id="listeComments">
     <h4>Commentaires</h4>
     {%  for billet in aside %}
         {%  for comment in billet.comments %}

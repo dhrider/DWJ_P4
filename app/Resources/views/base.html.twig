@@ -65,7 +65,12 @@
             </nav>
 
             <div class="container-fluid col-md-12" id="content">
-                {% block body %}{% endblock %}
+                <section class="col-md-10">
+                    {% block body %}{% endblock %}
+                </section>
+                <aside class="col-md-2">
+                    {% block aside %}{% endblock %}
+                </aside>
             </div>
 
             <div class="footer col-md-12">

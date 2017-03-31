@@ -1,17 +1,26 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-md-10" id="billetsChronologie">
-            {%  for billet in billets %}
-                <div class="col-md-6 billetUnique">
+    <div id="billetsChronologie">
+        {%  for billet in billets %}
+            <article class="billetUnique">
+                <h4>Publié le : {{ billet.date | date('d-m-Y') }}</h4>
+                <header>
                     <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h3>{{ billet.title }}</h3></a>
-                    <h6>Publié le : {{ billet.date | date('d-m-Y') }}</h6>
-                    <p id="contenu" style="text-align: justify">{{ billet.content | truncate(500, true, '...') }}</p>
-                    <a href="{{ path('blog_billet', {'id' : billet.id}) }}#commentsContent">{{ billet.getNumberOfComments }} commentaire(s)</a>
+                </header>
+                <div>
+                    <p id="contenu" style="text-align: justify">{{ billet.content | truncate(500) }}</p>
+                    <p><a href="{{ path('blog_billet', {'id' : billet.id}) }}">Lire la suite...</a></p>
                 </div>
-            {% endfor %}
-        </div>
-        {{ render(controller('BlogBundle:Blog:aside')) }}
+                <footer class="billetFooter" style="border-bottom: 1px solid black;">
+                    <a href="{{ path('blog_billet', {'id' : billet.id}) }}#commentsContent">{{ billet.getNumberOfComments }} commentaire(s)</a>
+                    <br/>
+                </footer>
+            </article>
+        {% endfor %}
     </div>
+{% endblock %}
+
+{% block aside %}
+    {{ render(controller('BlogBundle:Blog:aside')) }}
 {% endblock %}
