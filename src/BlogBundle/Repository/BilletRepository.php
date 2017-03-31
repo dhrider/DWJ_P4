@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class BilletRepository extends EntityRepository
 {
-    public function findAll()
+    public function findBillets()
     {
         return $this->findBy(array(), array('id' => 'DESC'));
     }

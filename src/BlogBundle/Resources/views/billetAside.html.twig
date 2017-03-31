@@ -9,7 +9,7 @@
     {%  for billet in aside %}
         {%  for comment in billet.comments %}
             <p>
-                <a href="{{ path('blog_billet', {'id' : billet.id}) }}#commentaires">{{ comment.author }}</a>
+                <a href="{{ path('blog_billet', {'id' : billet.id}) }}#commentsContent">{{ comment.author }}</a>
                 concernant le <strong>{{ billet.title }}</strong>
             </p>
         {% endfor %}

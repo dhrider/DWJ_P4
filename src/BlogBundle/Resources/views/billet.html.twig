@@ -7,7 +7,13 @@
         <div id="commentaires">
             <h3>Commentaires :</h3>
             <div id="commentsContent">
-
+                {% for comment in comments %}
+                    <h5>{{ comment.author }} a publié(e) le {{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</h5>
+                    <p>{{ comment.content }}</p>
+                {% endfor %}
+                <div class="well container-fluid col-md-5">
+                    {{ render(controller('BlogBundle:Blog:addComment')) }}
+                </div>
             </div>
         </div>
     </div>
