@@ -4,7 +4,12 @@
     <div class="col-md-10" id="billetEntier">
         <h2>{{ billet.title }}</h2>
         <p style="text-align: justify">{{ billet.content | nl2br }}</p>
-        <div id="commentaires"></div>
+        <div id="commentaires">
+            <h3>Commentaires :</h3>
+            <div id="commentsContent">
+
+            </div>
+        </div>
     </div>
     {{ render(controller('BlogBundle:Blog:aside')) }}
 {% endblock %}

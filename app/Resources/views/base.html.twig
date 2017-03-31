@@ -14,7 +14,7 @@
 
     <body>
         <div class="container-fluid">
-            <nav class="navbar">
+            <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-target">
@@ -29,31 +29,36 @@
                             <li>
                                 <a href="{{ path('blog_homepage') }}"><span class="glyphicon glyphicon-home"></span> Accueil</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-cog"></span> Administration <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ path('blog_adminBillets') }}">Billets</a></li>
-                                    <li><a href="{{ path('blog_adminComments') }}">Commentaires</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-user"></span> Bonjour Jean <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Log out</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-user"></span> Not connected <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Log in</a></li>
-                                </ul>
-                            </li>
+                            {% if app.user %}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-cog"></span> Administration <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('blog_adminBillets') }}">Billets</a></li>
+                                        <li><a href="{{ path('blog_adminComments') }}">Commentaires</a></li>
+                                    </ul>
+                                </li>
+                            {% endif %}
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-user"></span> Bonjour Jean <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Log out</a></li>
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-user"></span> Not connected <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('fos_user_security_login') }}">Log in</a></li>
+                                    </ul>
+                                </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

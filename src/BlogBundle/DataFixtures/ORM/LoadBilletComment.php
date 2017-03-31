@@ -898,6 +898,7 @@ class LoadBilletComment implements FixtureInterface
         foreach ($billets as $billet)
         {
             $newBillet = new Billet();
+            $newComment = new Comment();
 
             foreach ($billet as $cle => $valeur)
             {
@@ -915,7 +916,12 @@ class LoadBilletComment implements FixtureInterface
                 }
             }
 
+            $newComment->setAuthor('Philippe');
+            $newComment->setContent('C \'est du beau travail !');
+            $newComment->setBillet($newBillet);
+
             $manager->persist($newBillet);
+            $manager->persist($newComment);
         }
 
         $manager->flush();

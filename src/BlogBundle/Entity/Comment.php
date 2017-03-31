@@ -24,9 +24,9 @@ class Comment
     protected $date;
 
     /**
-     * @ORM\Column(name="dateUpdate", type="datetime")
+     * @ORM\Column(name="author", type="string", length=55)
      */
-    protected $dateUpdate;
+    protected $author;
 
     /**
      * @ORM\Column(name="content", type="text")
@@ -63,17 +63,17 @@ class Comment
     /**
      * @return mixed
      */
-    public function getDateUpdate()
+    public function getAuthor()
     {
-        return $this->dateUpdate;
+        return $this->author;
     }
 
     /**
-     * @param mixed $dateUpdate
+     * @param mixed $author
      */
-    public function setDateUpdate(\DateTime $dateUpdate)
+    public function setAuthor($author)
     {
-        $this->dateUpdate = $dateUpdate;
+        $this->author = $author;
     }
 
     /**
