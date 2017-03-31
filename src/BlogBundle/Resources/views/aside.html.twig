@@ -1,17 +1,2 @@
-<div id="listeBillets">
-    <h4>Liste des épisodes</h4>
-    {%  for billet in aside %}
-        <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h5 style="text-align: left">{{ billet.title }}</h5></a>
-    {% endfor %}
-</div>
-<div id="listeComments">
-    <h4>Commentaires</h4>
-    {%  for billet in aside %}
-        {%  for comment in billet.comments %}
-            <p>
-                <a href="{{ path('blog_billet', {'id' : billet.id}) }}#commentsContent">{{ comment.author }}</a>
-                concernant le <strong>{{ billet.title }}</strong>
-            </p>
-        {% endfor %}
-    {% endfor %}
-</div>
+{{ include('BlogBundle:Billets:billetsAside.html.twig') }}
+{{ include('BlogBundle:Comments:commentsAside.html.twig') }}
