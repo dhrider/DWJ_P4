@@ -49,7 +49,7 @@ class BlogController extends Controller
             ->findCommentsByBilletId($billet->getId())
         ;
 
-        return $this->render('BlogBundle::billet.html.twig', array(
+        return $this->render('BlogBundle:Billets:billet.html.twig', array(
             'billet' => $billet,
             'comments' => $comments
         ));
@@ -60,7 +60,7 @@ class BlogController extends Controller
     {
         $billets = $this->getAllBillets();
 
-        return $this->render('BlogBundle::adminBillets.html.twig', array(
+        return $this->render('BlogBundle:Billets:adminBillets.html.twig', array(
             'billets' => $billets
         ));
     }
@@ -69,7 +69,7 @@ class BlogController extends Controller
     {
         $comments = $this->getAllComments();
 
-        return $this->render('BlogBundle::adminComments.html.twig', array(
+        return $this->render('BlogBundle:Comments:adminComments.html.twig', array(
             'comments' => $comments
         ));
     }

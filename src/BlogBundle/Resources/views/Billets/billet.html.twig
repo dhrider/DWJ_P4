@@ -1,7 +1,7 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <div class="col-md-10" id="billetEntier">
+    <div id="billetEntier">
         <h2>{{ billet.title }}</h2>
         <p style="text-align: justify">{{ billet.content | nl2br }}</p>
         <div id="commentaires">
@@ -12,10 +12,13 @@
                     <p>{{ comment.content }}</p>
                 {% endfor %}
                 <div class="well container-fluid col-md-5">
-                    {{ render(controller('BlogBundle:Blog:addComment')) }}
+
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block aside %}
     {{ render(controller('BlogBundle:Blog:aside')) }}
 {% endblock %}
