@@ -8,10 +8,10 @@ blog_billet:
     requirements:
         id: '\d+'
 
-blog_adminBillets:
+blog_billetsAdmin:
     path:    /admin/billets
-    defaults: { _controller: BlogBundle:Blog:adminBillets }
+    defaults: { _controller: BlogBundle:Blog:billetsAdmin }
 
-blog_adminComments:
+blog_commentsAdmin:
     path:    /admin/comments
-    defaults: { _controller: BlogBundle:Blog:adminComments }
+    defaults: { _controller: BlogBundle:Blog:commentsAdmin }

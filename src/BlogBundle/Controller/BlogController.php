@@ -56,20 +56,20 @@ class BlogController extends Controller
     }
 
 
-    public function adminBilletsAction()
+    public function billetsAdminAction()
     {
         $billets = $this->getAllBillets();
 
-        return $this->render('BlogBundle:Billets:adminBillets.html.twig', array(
+        return $this->render('BlogBundle:Billets:billetsAdmin.html.twig', array(
             'billets' => $billets
         ));
     }
 
-    public function adminCommentsAction()
+    public function commentsAdminAction()
     {
         $comments = $this->getAllComments();
 
-        return $this->render('BlogBundle:Comments:adminComments.html.twig', array(
+        return $this->render('BlogBundle:Comments:commentsAdmin.html.twig', array(
             'comments' => $comments
         ));
     }
