@@ -4,6 +4,7 @@ namespace BlogBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use BlogBundle\Form\CommentType;
 use BlogBundle\Entity\Billet;
 use BlogBundle\Entity\Comment;
 
@@ -21,7 +22,7 @@ class BlogController extends Controller
 
     public function asideAction()
     {
-        $billetsCommentsAside = $this
+        $billetsAside = $this
             ->getDoctrine()
             ->getManager()
             ->getRepository('BlogBundle:Billet')
@@ -29,7 +30,7 @@ class BlogController extends Controller
         ;
 
         return $this->render('BlogBundle::aside.html.twig', array(
-            'aside' => $billetsCommentsAside
+            'aside' => $billetsAside
         ));
     }
 
@@ -49,9 +50,27 @@ class BlogController extends Controller
             ->findCommentsByBilletId($billet->getId())
         ;
 
+        $comment = new Comment();
+
+        $form = $this->createForm(CommentType::class, $comment);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid())
+        {
+            $comment->setBillet($billet);
+
+            $em  = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+
+            return $this->redirectToRoute('blog_billet', array(
+                'id' => $billet->getId()
+            ));
+        }
+
         return $this->render('BlogBundle:Billets:billet.html.twig', array(
             'billet' => $billet,
-            'comments' => $comments
+            'comments' => $comments,
+            'form' => $form->createView()
         ));
     }
 

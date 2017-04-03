@@ -3,17 +3,11 @@
 {% block body %}
     <div id="billetEntier">
         <h2>{{ billet.title }}</h2>
-        <p style="text-align: justify">{{ billet.content | nl2br }}</p>
-        <div id="commentaires">
-            <h3>Commentaires :</h3>
-            <div id="commentsContent">
-                {% for comment in comments %}
-                    <h5>{{ comment.author }} a publié(e) le {{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</h5>
-                    <p>{{ comment.content }}</p>
-                {% endfor %}
-                <div class="well container-fluid col-md-5">
-
-                </div>
+        <p style="text-align: justify">{{ billet.content | nl2br }}
+        <div class="comments" id="comments">
+            <div class="previousComments">
+                <h3>Commentaires :</h3>
+                {% include('BlogBundle:Comments:comment.html.twig') %}
             </div>
         </div>
     </div>

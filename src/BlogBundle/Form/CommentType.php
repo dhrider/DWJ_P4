@@ -19,7 +19,7 @@ class CommentType extends AbstractType
         $builder
             ->add('author',     TextType::class, array(
                 'attr' => array(
-                    'class' => 'nom',
+                    'class' => 'author',
                     'required',
                     'placeholder' => 'Entrez votre nom'
                 ),

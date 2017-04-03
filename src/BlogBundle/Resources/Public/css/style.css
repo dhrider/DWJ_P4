@@ -28,6 +28,14 @@ body {
     margin-bottom: 20px;
 }
 
+.comments {
+    clear: both;
+}
+
+.comments .odd {
+    background: #eee;
+}
+
 #billetsChronologie h3 {
     margin-top: 10px;
 }
