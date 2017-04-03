@@ -1,2 +1,15 @@
-{{ include('BlogBundle:Billets:billetsAside.html.twig') }}
-{{ include('BlogBundle:Comments:commentsAside.html.twig') }}
+<div id="listeBillets">
+    <h4>5 dernières publication</h4>
+    {%  for billet in billetAside %}
+        <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h5 style="text-align: left">{{ billet.title }}</h5></a>
+    {% endfor %}
+</div>
+<div id="listeComments">
+    <h4>5 derniers commentaires</h4>
+    {%  for comment in commentAside %}
+        <p>
+            <a href="{{ path('blog_billet', {'id' : comment.billet.id}) }}#comments">{{ comment.author }}</a>
+            concernant le <strong>{{ comment.billet.title }}</strong>
+        </p>
+    {% endfor %}
+</div>

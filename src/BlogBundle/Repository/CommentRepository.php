@@ -24,4 +24,19 @@ class CommentRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findFiveLastComments()
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        $qb
+            ->select('c')
+            ->leftJoin('c.billet', 'billet')
+            ->addSelect('billet')
+            ->orderBy('c.date', 'DESC')
+            ->setMaxResults(5)
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
 }

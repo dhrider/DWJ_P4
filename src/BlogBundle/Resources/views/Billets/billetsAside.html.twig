@@ -1,6 +1,0 @@
-<div id="listeBillets">
-    <h4>5 dernières publication</h4>
-    {%  for billet in aside %}
-        <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h5 style="text-align: left">{{ billet.title }}</h5></a>
-    {% endfor %}
-</div>

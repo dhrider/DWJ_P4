@@ -17,16 +17,15 @@ class BilletRepository extends EntityRepository
         return $this->findBy(array(), array('id' => 'DESC'));
     }
 
-    public function findFiveLastTitle()
+    public function findFiveLastBillets()
     {
         $qb = $this->createQueryBuilder('t');
 
         $qb
             ->select('t')
-            ->leftJoin('t.comments', 'comment')
-            ->addSelect('comment')
             ->orderBy('t.id', 'DESC')
-            ->setMaxResults(5);
+            ->setMaxResults(5)
+        ;
 
         return $qb
             ->getQuery()
