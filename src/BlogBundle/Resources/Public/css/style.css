@@ -58,6 +58,14 @@ td, th {
     text-align: center;
 }
 
+.btn-xs {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
 .footer {
     background-color: #E3E2E2;
 }

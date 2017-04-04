@@ -78,6 +78,18 @@ class BlogController extends Controller
         ));
     }
 
+    public function deleteCommentAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $comment =$em->getRepository('BlogBundle:Comment')->find($request->get('id'));
+
+        $em->remove($comment);
+        $em->flush();
+
+        return $this->redirectToRoute('blog_commentsAdmin');
+    }
+
     public function getRepo($repository)
     {
         $result = $this
