@@ -2,28 +2,34 @@
 
 {% block body %}
     <div class="container-fluid">
-        <h2>Administation des commentaires</h2>
+        <h2>Modération des commentaires</h2>
         <br/>
         <table id="tableauComments">
             <thead>
-                <th>Auteur</th>
-                <th>Commentaires</th>
-                <th>Billet</th>
-                <th>Date</th>
-                <th>Actions</th>
+                <tr>
+                    <th>Auteur</th>
+                    <th>Commentaires</th>
+                    <th>Billet</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
             </thead>
             <tbody id="corpsTableauComments">
                 {% for comment in comments %}
                     <tr>
                         <td>{{ comment.author }}</td>
-                        <td>{{ comment.content }}</td>
+                        <td>
+
+                            {{ comment.content | truncate(30) }}
+
+                        </td>
                         <td>{{ comment.billet.title }}</td>
                         <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
                         <td>
                             <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#commentDialog{{ comment.id }}">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>
-                            <div class="modal fade" id="commentDialog{{ comment.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="commentDialog{{ comment.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -31,7 +37,7 @@
                                             <h4 class="modal-title" id="myModalLabel">Confirmation de suppression</h4>
                                         </div>
                                         <div class="modal-body">
-                                            Voulez vous vraiment supprimer ce commentaire ?
+                                            Voulez vous vraiment supprimer le commentaire de {{ comment.author }} du {{ comment.date | date('d-m-Y') }} ?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>

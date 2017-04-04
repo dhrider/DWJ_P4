@@ -46,7 +46,7 @@
                                         <span class="glyphicon glyphicon-user"></span> Bonjour Jean <b class="caret"></b>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Log out</a></li>
+                                        <li><a href="{{ path('blog_logout') }}">Log out</a></li>
                                     </ul>
                                 </li>
                             {% else %}
@@ -55,7 +55,7 @@
                                         <span class="glyphicon glyphicon-user"></span> Not connected <b class="caret"></b>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ path('fos_user_security_login') }}">Log in</a></li>
+                                        <li><a href="{{ path('blog_login') }}">Log in</a></li>
                                     </ul>
                                 </li>
                             {% endif %}

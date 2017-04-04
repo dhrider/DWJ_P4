@@ -5,7 +5,6 @@ namespace BlogBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Form\CommentType;
-use BlogBundle\Entity\Billet;
 use BlogBundle\Entity\Comment;
 
 

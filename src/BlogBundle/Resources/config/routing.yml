@@ -19,3 +19,15 @@ blog_commentsAdmin:
 blog_commentsAdmin_delete:
     path:    /admin/comments/delete
     defaults: { _controller: BlogBundle:Blog:deleteComment }
+
+blog_login:
+    path: /login
+    defaults: { _controller: BlogBundle:Security:login }
+
+blog_login_check:
+    path: /login/check
+    defaults: { _controller: BlogBundle:Security:loginCheck }
+
+blog_logout:
+    path: /logout
+    defaults: { _controller: BlogBundle:Security:logout }
