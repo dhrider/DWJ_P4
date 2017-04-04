@@ -39,4 +39,18 @@ class CommentRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findAllComments()
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        $qb
+            ->select('c')
+            ->leftJoin('c.billet', 'billet')
+            ->addSelect('billet')
+            ->orderBy('c.date', 'DESC')
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
 }

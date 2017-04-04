@@ -17,7 +17,7 @@ class BilletRepository extends EntityRepository
         return $this->findBy(array(), array('id' => 'DESC'));
     }
 
-    public function findFiveLastBillets()
+    public function findFiveLastTitle()
     {
         $qb = $this->createQueryBuilder('t');
 

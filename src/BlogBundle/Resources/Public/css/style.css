@@ -48,6 +48,16 @@ body {
     text-align: center;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+
 .footer {
     background-color: #E3E2E2;
 }

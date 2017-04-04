@@ -1,7 +1,34 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <div class="container-fluid col-md-12">
+    <div class="container-fluid">
         <h2>Administation des commentaires</h2>
+        <br/>
+        <table id="tableauComments">
+            <thead>
+                <tr>Auteur</tr>
+                <tr>Commentaires</tr>
+                <tr>Billet</tr>
+                <tr>Date</tr>
+                <tr>Actions</tr>
+            </thead>
+            <tbody id="corpsTableauComments">
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{ comment.author }}</td>
+                        <td>{{ comment.content }}</td>
+                        <td>{{ comment.billet.title }}</td>
+                        <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+{% endblock %}
+
+{% block aside %}
+    <h4><span class="glyphicon glyphicon-cog"></span> Administration</h4>
+    <a href="{{ path('blog_billetsAdmin') }}"><h5>Billets</h5></a>
+    <a href="{{ path('blog_commentsAdmin') }}">Commentaires</a>
 {% endblock %}

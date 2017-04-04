@@ -8,8 +8,6 @@ blog_billet:
     requirements:
         id: '\d+'
 
-
-
 blog_billetsAdmin:
     path:    /admin/billets
     defaults: { _controller: BlogBundle:Blog:billetsAdmin }

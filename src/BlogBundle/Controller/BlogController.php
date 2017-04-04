@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     public function indexAction()
     {
-        $billets = $this->getRepository('Billet')->findBillets();
+        $billets = $this->getRepo('Billet')->findBillets();
 
         return $this->render('BlogBundle::index.html.twig', array(
             'billets' => $billets
@@ -22,9 +22,9 @@ class BlogController extends Controller
 
     public function asideAction()
     {
-        $billetsAside = $this->getRepository('Billet')->findFiveLastBillets();
+        $billetsAside = $this->getRepo('Billet')->findFiveLastTitle();
 
-        $commentAside = $this->getRepository('Comment')->findFiveLastComments();
+        $commentAside = $this->getRepo('Comment')->findFiveLastComments();
 
         return $this->render('BlogBundle::aside.html.twig', array(
             'billetAside' => $billetsAside,
@@ -34,10 +34,9 @@ class BlogController extends Controller
 
     public function billetAction(Request $request)
     {
-        $billet = $this->getRepository('Billet')->find($request->get('id'))
-        ;
+        $billet = $this->getRepo('Billet')->find($request->get('id'));
 
-        $comments = $this->getRepository('Comment')->findCommentsByBilletId($billet->getId());
+        $comments = $this->getRepo('Comment')->findCommentsByBilletId($billet->getId());
 
         $comment = new Comment();
 
@@ -51,9 +50,9 @@ class BlogController extends Controller
             $em->persist($comment);
             $em->flush();
 
-            return $this->redirectToRoute('blog_billet', array(
-                'id' => $billet->getId()
-            ));
+            return $this->redirect($this->generateUrl('blog_billet',
+                ['id' => $comment->getBillet()->getId()]).'#comments')
+            ;
         }
 
         return $this->render('BlogBundle:Billets:billet.html.twig', array(
@@ -63,7 +62,23 @@ class BlogController extends Controller
         ));
     }
 
-    public function getRepository($repository)
+    public function billetsAdminAction()
+    {
+
+
+        return $this->render('BlogBundle:Billets:billetsAdmin.html.twig');
+    }
+
+    public function commentsAdminAction()
+    {
+        $comments = $this->getRepo('Comment')->findAllComments();
+
+        return $this->render('BlogBundle:Comments:commentsAdmin.html.twig', array(
+            'comments' => $comments
+        ));
+    }
+
+    public function getRepo($repository)
     {
         $result = $this
             ->getDoctrine()
