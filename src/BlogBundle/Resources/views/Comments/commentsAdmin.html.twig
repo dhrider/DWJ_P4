@@ -1,7 +1,8 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <div class="container-fluid">
+    <div class="col-md-10">
+        <div class="container-fluid">
         <h2>Modération des commentaires</h2>
         <br/>
         <table id="tableauComments">
@@ -52,10 +53,17 @@
             </tbody>
         </table>
     </div>
+    </div>
 {% endblock %}
 
 {% block aside %}
-    <h4><span class="glyphicon glyphicon-cog"></span> Administration</h4>
-    <a href="{{ path('blog_billetsAdmin') }}"><h5>Billets</h5></a>
-    <a href="{{ path('blog_commentsAdmin') }}">Commentaires</a>
+    <div class="col-md-2">
+        <div class="sidebar-nav-fixed pull-right affix">
+            <div class="well">
+                <h4><span class="glyphicon glyphicon-cog"></span> Administration</h4>
+                <a href="{{ path('blog_billetsAdmin') }}"><h5>Billets</h5></a>
+                <a href="{{ path('blog_commentsAdmin') }}">Commentaires</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

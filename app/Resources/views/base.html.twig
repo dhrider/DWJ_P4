@@ -66,16 +66,8 @@
 
             <div class="container-fluid col-md-12" id="content">
                 <div class="row">
-                    <div class="col-md-10">
-                        {% block body %}{% endblock %}
-                    </div>
-                    <div class="col-md-2">
-                        <div class="sidebar-nav-fixed pull-right affix">
-                            <div class="well">
-                                {% block aside %}{% endblock %}
-                            </div>
-                        </div>
-                    </div>
+                    {% block body %}{% endblock %}
+                    {% block aside %}{% endblock %}
                 </div>
             </div>
 

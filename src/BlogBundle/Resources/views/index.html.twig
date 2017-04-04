@@ -1,26 +1,34 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <div id="billetsChronologie">
-        {%  for billet in billets %}
-            <article class="billetUnique">
-                <h4>Publié le : {{ billet.date | date('d-m-Y') }}</h4>
-                <header>
-                    <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h3>{{ billet.title }}</h3></a>
-                </header>
-                <div>
-                    <p id="contenu" style="text-align: justify">{{ billet.content | truncate(500) }}</p>
-                    <p><a href="{{ path('blog_billet', {'id' : billet.id}) }}">Lire la suite...</a></p>
-                </div>
-                <footer class="billetFooter" style="border-bottom: 1px solid black;">
-                    <a href="{{ path('blog_billet', {'id' : billet.id}) }}#comments">{{ billet.getNumberOfComments }} commentaire(s)</a>
-                    <br/>
-                </footer>
-            </article>
-        {% endfor %}
+    <div class="col-md-10">
+        <div id="billetsChronologie">
+            {%  for billet in billets %}
+                <article class="billetUnique">
+                    <h4>Publié le : {{ billet.date | date('d-m-Y') }}</h4>
+                    <header>
+                        <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h3>{{ billet.title }}</h3></a>
+                    </header>
+                    <div>
+                        <p id="contenu" style="text-align: justify">{{ billet.content | truncate(500) }}</p>
+                        <p><a href="{{ path('blog_billet', {'id' : billet.id}) }}">Lire la suite...</a></p>
+                    </div>
+                    <footer class="billetFooter" style="border-bottom: 1px solid black;">
+                        <a href="{{ path('blog_billet', {'id' : billet.id}) }}#comments">{{ billet.getNumberOfComments }} commentaire(s)</a>
+                        <br/>
+                    </footer>
+                </article>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
 
 {% block aside %}
-    {{ render(controller('BlogBundle:Blog:aside')) }}
+    <div class="col-md-2">
+        <div class="sidebar-nav-fixed pull-right affix">
+            <div class="well">
+                {{ render(controller('BlogBundle:Blog:aside')) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}
