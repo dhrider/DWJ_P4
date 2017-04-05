@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="BlogUserBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="BlogBundle\Repository\UserRepository")
  */
 class User implements UserInterface
 {
@@ -45,8 +45,6 @@ class User implements UserInterface
      */
     protected $email;
 
-
-
     /**
      * @var array
      * @ORM\Column(name="roles", type="json_array")
@@ -62,9 +60,6 @@ class User implements UserInterface
 
         return ['ROLE_USER'];
     }
-
-
-
 
     public function getPassword()
     {
@@ -145,8 +140,6 @@ class User implements UserInterface
     {
         $this->password = $password;
     }
-
-
 
     /**
      * @return string

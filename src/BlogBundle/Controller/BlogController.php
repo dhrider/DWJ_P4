@@ -77,6 +77,15 @@ class BlogController extends Controller
         ));
     }
 
+    public function commentAdminAction(Request $request)
+    {
+        $comment = $this->getRepo('Comment')->find($request->get('id'));
+
+        return $this->render('BlogBundle:Comments:commentAdmin.html.twig', array(
+           'comment' => $comment
+        ));
+    }
+
     public function deleteCommentAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

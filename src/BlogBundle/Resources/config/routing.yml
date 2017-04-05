@@ -20,6 +20,12 @@ blog_commentsAdmin_delete:
     path:    /admin/comments/delete
     defaults: { _controller: BlogBundle:Blog:deleteComment }
 
+blog_commentAdmin:
+    path: /admin/comment/{id}
+    defaults: { _controller: BlogBundle:Blog:commentAdmin}
+    requirements:
+        id: '\d+'
+
 blog_login:
     path: /login
     defaults: { _controller: BlogBundle:Security:login }

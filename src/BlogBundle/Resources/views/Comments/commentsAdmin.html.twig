@@ -3,9 +3,9 @@
 {% block body %}
     <div class="col-md-10">
         <div class="container-fluid">
-        <h2>Modération des commentaires</h2>
+        <h2>Modération des commentaires :</h2>
         <br/>
-        <table id="tableauComments">
+        <table class="table table-bordered table-striped" id="tableauComments">
             <thead>
                 <tr>
                     <th>Auteur</th>
@@ -18,13 +18,11 @@
             <tbody id="corpsTableauComments">
                 {% for comment in comments %}
                     <tr>
-                        <td>{{ comment.author }}</td>
-                        <td>
-
-                            {{ comment.content | truncate(30) }}
-
+                        <td style="text-align: left; padding-left: 5px">{{ comment.author }}</td>
+                        <td style="text-align: left; padding-left: 5px">
+                            <a href="{{ path('blog_commentAdmin', {'id' : comment.id}) }}">{{ comment.content | truncate(65) }}</a>
                         </td>
-                        <td>{{ comment.billet.title }}</td>
+                        <td style="text-align: left; padding-left: 5px">{{ comment.billet.title }}</td>
                         <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
                         <td>
                             <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#commentDialog{{ comment.id }}">

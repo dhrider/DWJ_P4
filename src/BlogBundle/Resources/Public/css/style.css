@@ -48,22 +48,8 @@ body {
     text-align: center;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
 td, th {
-    border: 1px solid black;
     text-align: center;
-}
-
-.btn-xs {
-    -webkit-transform: scale(0.8);
-    -moz-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    transform: scale(0.8);
 }
 
 .footer {
