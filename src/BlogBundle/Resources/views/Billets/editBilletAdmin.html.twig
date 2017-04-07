@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<div class="col-md-10">
+    <div class="container-fluid">
+        <h1>Edition du billet : {{ billet.title }}</h1>
+        <br/>
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    </div>
+</div>
+{{ tinymce_init() }}
+{% endblock %}
+
+{% block aside %}
+    {{ include('BlogBundle::asideAdmin.html.twig') }}
+{% endblock %}

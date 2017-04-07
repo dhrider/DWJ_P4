@@ -2,6 +2,7 @@
 
 namespace BlogBundle\Controller;
 
+use BlogBundle\Form\BilletType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Form\CommentType;
@@ -63,9 +64,56 @@ class BlogController extends Controller
 
     public function billetsAdminAction()
     {
+        $billets = $this->getRepo('Billet')->findBillets();
+
+        return $this->render('BlogBundle:Billets:billetsAdmin.html.twig', array(
+            'billets' => $billets
+        ));
+    }
+
+    public function deleteBilletAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
+
+        $em->remove($billet);
+        $em->flush();
+
+        return $this->redirectToRoute('blog_billetsAdmin');
+    }
+
+    public function editBilletAction(Request $request)
+    {
+        $billet = $this->getRepo('Billet')->find($request->get('id'));
+
+        $form = $this->createForm(BilletType::class, $billet);
+        $form->handleRequest($request);
+
+        if ($request->isMethod('POST') && $form->isValid())
+        {
+            $billet->setDateUpdate(new \DateTime());
+            $billet->setTitle($form->getData()->getTitle());
+            $billet->setContent($form->getData()->getContent());
+
+            $em  = $this->getDoctrine()->getManager();
+            $em->persist($billet);
+            $em->flush();
+
+            return $this->redirectToRoute('blog_billetsAdmin');
+        }
+
+        return $this->render('BlogBundle:Billets:editBilletAdmin.html.twig', array(
+            'billet' => $billet,
+            'form' => $form->createView()
+        ));
+    }
+
+    public function addBilletAction(Request $request)
+    {
 
 
-        return $this->render('BlogBundle:Billets:billetsAdmin.html.twig');
+        return $this->render('BlogBundle:Billets:addBilletAdmin.html.twig');
     }
 
     public function commentsAdminAction()

@@ -2,6 +2,9 @@ blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Blog:index }
 
+
+
+
 blog_billet:
     path:     /billet/{id}
     defaults: { _controller: BlogBundle:Blog:billet }
@@ -12,19 +15,35 @@ blog_billetsAdmin:
     path:    /admin/billets
     defaults: { _controller: BlogBundle:Blog:billetsAdmin }
 
+blog_billetsAdmin_delete:
+    path:    /admin/billets/delete
+    defaults: { _controller: BlogBundle:Blog:deleteBillet}
+
+blog_billetAdmin_edit:
+    path:    /admin/billet/{id}/edit
+    defaults: { _controller: BlogBundle:Blog:editBillet}
+    requirements:
+        id: '\d+'
+
+
+
+
 blog_commentsAdmin:
     path:    /admin/comments
     defaults: { _controller: BlogBundle:Blog:commentsAdmin }
-
-blog_commentsAdmin_delete:
-    path:    /admin/comments/delete
-    defaults: { _controller: BlogBundle:Blog:deleteComment }
 
 blog_commentAdmin:
     path: /admin/comment/{id}
     defaults: { _controller: BlogBundle:Blog:commentAdmin}
     requirements:
         id: '\d+'
+
+blog_commentsAdmin_delete:
+    path:    /admin/comments/delete
+    defaults: { _controller: BlogBundle:Blog:deleteComment }
+
+
+
 
 blog_login:
     path: /login

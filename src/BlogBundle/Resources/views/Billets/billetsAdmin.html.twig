@@ -3,19 +3,62 @@
 {% block body %}
     <div class="col-md-10">
         <div class="container-fluid col-md-12">
-            <h2>Administation des billets</h2>
+            <h2>Administration des billets :</h2>
+            <br/>
+            <table class="table table-bordered table-striped" id="tableauBillets">
+                <thead>
+                    <tr>
+                        <th>Episodes</th>
+                        <th>Date de création</th>
+                        <th>Date de modification</th>
+                        <th>Nombre de commentaires</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="corpsTableauBillets">
+                    {% for billet in billets %}
+                        <tr>
+                            <td style="text-align: left">{{ billet.title }}</td>
+                            <td>{{ billet.date | date('d-m-Y') }}</td>
+                            <td>{{ billet.dateUpdate | date('d-m-Y') }}</td>
+                            <td><a href="{{ path('blog_commentAdmin', {'id' : billet.id}) }}">{{ billet.getNumberOfComments }}</a> </td>
+                            <td>
+                                <button type="button" class="btn btn-xs" title="Edit">
+                                    <a href="{{ path('blog_billetAdmin_edit', {'id' : billet.id}) }}"><span class="glyphicon glyphicon-edit"></span></a>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#billetDialog{{ billet.id }}">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                                <div class="modal fade" id="billetDialog{{ billet.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Confirmation de suppression</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                Voulez vous vraiment supprimer le : {{ billet.title }} du {{ billet.date | date('d-m-Y') }} ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+                                                <a href="{{ path('blog_billetsAdmin_delete', { 'id': billet.id }) }}" class="btn btn-danger">Oui</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary pull-right" title="Add">
+                <span class="glyphicon glyphicon-pencil"> Nouveau billet</span>
+            </button>
         </div>
     </div>
+
 {% endblock %}
 
 {% block aside %}
-    <div class="col-md-2">
-        <div class="sidebar-nav-fixed pull-right affix">
-            <div class="well">
-                <h4><span class="glyphicon glyphicon-cog"></span> Administration</h4>
-                <a href="{{ path('blog_billetsAdmin') }}"><h5>Billets</h5></a>
-                <a href="{{ path('blog_commentsAdmin') }}">Commentaires</a>
-            </div>
-        </div>
-    </div>
+    {{ include('BlogBundle::asideAdmin.html.twig') }}
 {% endblock %}

@@ -30,7 +30,7 @@ class Billet
      * @var \DateTime
      * @ORM\Column(name="dateUpdate", type="datetime", nullable=true)
      */
-    protected $dateUpadte;
+    protected $dateUpdate;
 
     /**
      * @var string
@@ -52,6 +52,7 @@ class Billet
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->dateUpdate =  new \DateTime();
         $this->comments = new ArrayCollection();
     }
 
@@ -108,17 +109,17 @@ class Billet
     /**
      * @return mixed
      */
-    public function getDateUpadte()
+    public function getDateUpdate()
     {
-        return $this->dateUpadte;
+        return $this->dateUpdate;
     }
 
     /**
-     * @param mixed $dateUpadte
+     * @param mixed $dateUpdate
      */
-    public function setDateUpadte(\DateTime $dateUpadte)
+    public function setDateUpdate(\DateTime $dateUpdate)
     {
-        $this->dateUpadte = $dateUpadte;
+        $this->dateUpdate = $dateUpdate;
     }
 
     /**

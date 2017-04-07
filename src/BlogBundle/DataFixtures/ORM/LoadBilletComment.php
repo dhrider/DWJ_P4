@@ -905,7 +905,7 @@ class LoadBilletComment implements FixtureInterface
                 switch ($cle)
                 {
                     case 0:
-                        $newBillet->setDateUpadte($valeur);
+                        $newBillet->setDateUpdate($valeur);
                         break;
                     case 1:
                         $newBillet->setTitle($valeur);
