@@ -19,6 +19,10 @@ blog_billetsAdmin_delete:
     path:    /admin/billets/delete
     defaults: { _controller: BlogBundle:Blog:deleteBillet}
 
+blog_billetAdmin_add:
+    path:    /admin/billet/add
+    defaults: { _controller: BlogBundle:Blog:addBillet }
+
 blog_billetAdmin_edit:
     path:    /admin/billet/{id}/edit
     defaults: { _controller: BlogBundle:Blog:editBillet}

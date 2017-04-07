@@ -20,15 +20,38 @@
                     <tr>
                         <td style="text-align: left; padding-left: 5px">{{ comment.author }}</td>
                         <td style="text-align: left; padding-left: 5px">
-                            <a href="{{ path('blog_commentAdmin', {'id' : comment.id}) }}">{{ comment.content | truncate(65) }}</a>
+                            {% if comment.content | length >= 65 %}
+                                {{ comment.content | truncate(65) }}
+                                <button type="button" class="btn btn-xs" title="Delete" data-toggle="modal" data-target="#commentDialog{{ comment.id }}">
+                                    <span class="glyphicon glyphicon-zoom-in"></span>
+                                </button>
+                                <div class="modal fade" id="commentDialog{{ comment.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Détail du commentaire de {{ comment.author }}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                 {{ comment.content }}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% else %}
+                                {{ comment.content }}
+                            {% endif %}
                         </td>
                         <td style="text-align: left; padding-left: 5px">{{ comment.billet.title }}</td>
                         <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
                         <td>
-                            <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#commentDialog{{ comment.id }}">
+                            <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#commentDeleteDialog{{ comment.id }}">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>
-                            <div class="modal fade" id="commentDialog{{ comment.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="commentDeleteDialog{{ comment.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">

@@ -4,7 +4,7 @@
     <div class="col-md-10">
         <div id="billetEntier">
             <h2>{{ billet.title }}</h2>
-            <p style="text-align: justify">{{ billet.content | nl2br }}
+            <p style="text-align: justify">{{ billet.content | raw }}
             <div class="comments" id="comments">
                 <div class="previousComments">
                     <h3>Commentaires :</h3>

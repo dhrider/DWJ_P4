@@ -1,7 +1,15 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-
+    <div class="col-md-10">
+        <div class="container-fluid">
+            <h1>Nouveau billet</h1>
+            <br/>
+            {{ form_start(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+    {{ tinymce_init() }}
 {% endblock %}
 
 {% block aside %}

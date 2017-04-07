@@ -107,5 +107,4 @@ class Comment
     {
         return $this->billet;
     }
-
 }

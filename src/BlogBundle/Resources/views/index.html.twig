@@ -10,7 +10,7 @@
                         <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h3>{{ billet.title }}</h3></a>
                     </header>
                     <div>
-                        <p id="contenu" style="text-align: justify">{{ billet.content | truncate(500) }}</p>
+                        <p id="contenu" style="text-align: justify">{{ billet.content | truncate(500) | raw }}</p>
                         <p><a href="{{ path('blog_billet', {'id' : billet.id}) }}">Lire la suite...</a></p>
                     </div>
                     <footer class="billetFooter" style="border-bottom: 1px solid black;">

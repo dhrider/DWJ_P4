@@ -2,6 +2,7 @@
 
 namespace BlogBundle\Controller;
 
+use BlogBundle\Entity\Billet;
 use BlogBundle\Form\BilletType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -88,9 +89,8 @@ class BlogController extends Controller
         $billet = $this->getRepo('Billet')->find($request->get('id'));
 
         $form = $this->createForm(BilletType::class, $billet);
-        $form->handleRequest($request);
 
-        if ($request->isMethod('POST') && $form->isValid())
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid())
         {
             $billet->setDateUpdate(new \DateTime());
             $billet->setTitle($form->getData()->getTitle());
@@ -111,9 +111,19 @@ class BlogController extends Controller
 
     public function addBilletAction(Request $request)
     {
+        $billet = new Billet();
 
+        $form = $this->createForm(BilletType::class, $billet);
 
-        return $this->render('BlogBundle:Billets:addBilletAdmin.html.twig');
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()){
+            $em  = $this->getDoctrine()->getManager();
+            $em->persist($billet);
+            $em->flush();
+        }
+
+        return $this->render('BlogBundle:Billets:addBilletAdmin.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 
     public function commentsAdminAction()
