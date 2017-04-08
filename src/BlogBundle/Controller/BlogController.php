@@ -135,12 +135,14 @@ class BlogController extends Controller
         ));
     }
 
-    public function commentAdminAction(Request $request)
+    public function commentsByBilletAdminAction(Request $request)
     {
-        $comment = $this->getRepo('Comment')->find($request->get('id'));
+        $comments = $this->getRepo('Comment')->findCommentsByBilletId($request->get('id'));
+        $billet = $this->getRepo('Billet')->find($request->get('id'));
 
-        return $this->render('BlogBundle:Comments:commentAdmin.html.twig', array(
-           'comment' => $comment
+        return $this->render('BlogBundle:Comments:commentsByBilletAdmin.html.twig', array(
+            'comments' => $comments,
+            'billet' => $billet
         ));
     }
 

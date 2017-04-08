@@ -22,53 +22,14 @@
                         <td style="text-align: left; padding-left: 5px">
                             {% if comment.content | length >= 65 %}
                                 {{ comment.content | truncate(65) }}
-                                <button type="button" class="btn btn-xs" title="Delete" data-toggle="modal" data-target="#commentDialog{{ comment.id }}">
-                                    <span class="glyphicon glyphicon-zoom-in"></span>
-                                </button>
-                                <div class="modal fade" id="commentDialog{{ comment.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title" id="myModalLabel">Détail du commentaire de {{ comment.author }}</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                 {{ comment.content }}
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {{ include('BlogBundle:Comments:commentModalDialog.html.twig') }}
                             {% else %}
                                 {{ comment.content }}
                             {% endif %}
                         </td>
                         <td style="text-align: left; padding-left: 5px">{{ comment.billet.title }}</td>
                         <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#commentDeleteDialog{{ comment.id }}">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                            <div class="modal fade" id="commentDeleteDialog{{ comment.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel">Confirmation de suppression</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            Voulez vous vraiment supprimer le commentaire de {{ comment.author }} du {{ comment.date | date('d-m-Y') }} ?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
-                                            <a href="{{ path('blog_commentsAdmin_delete', { 'id': comment.id }) }}" class="btn btn-danger">Oui</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
+                        <td>{{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

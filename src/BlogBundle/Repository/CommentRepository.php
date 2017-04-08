@@ -53,4 +53,5 @@ class CommentRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
 }

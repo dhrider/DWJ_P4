@@ -21,7 +21,7 @@ blog_billetsAdmin_delete:
 
 blog_billetAdmin_add:
     path:    /admin/billet/add
-    defaults: { _controller: BlogBundle:Blog:addBillet }
+    defaults: { _controller: BlogBundle:Blog:addBillet}
 
 blog_billetAdmin_edit:
     path:    /admin/billet/{id}/edit
@@ -36,9 +36,9 @@ blog_commentsAdmin:
     path:    /admin/comments
     defaults: { _controller: BlogBundle:Blog:commentsAdmin }
 
-blog_commentAdmin:
-    path: /admin/comment/{id}
-    defaults: { _controller: BlogBundle:Blog:commentAdmin}
+blog_commentsByBilletAdmin:
+    path: /admin/comment/billet/{id}
+    defaults: { _controller: BlogBundle:Blog:commentsByBilletAdmin}
     requirements:
         id: '\d+'
 

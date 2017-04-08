@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="col-md-10">
+        <div class="container-fluid">
+            <h2>Modération des commentaires du billet : {{ billet.title }}</h2>
+            <br/>
+            <table class="table table-bordered table-striped" id="tableauCommentsByBillet">
+                <thead>
+                <tr>
+                    <th>Auteur</th>
+                    <th>Commentaires</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="corpsTableauComments">
+                    {% for comment in comments %}
+                        <tr>
+                            <td style="text-align: left; padding-left: 5px">{{ comment.author }}</td>
+                            <td style="text-align: left; padding-left: 5px">
+                                {% if comment.content | length >= 65 %}
+                                    {{ comment.content | truncate(65) }}
+                                    {{ include('BlogBundle:Comments:commentModalDialog.html.twig') }}
+                                {% else %}
+                                    {{ comment.content }}
+                                {% endif %}
+                            </td>
+                            <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
+                            <td>{{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block aside %}
+    {{ include('BlogBundle::asideAdmin.html.twig') }}
+{% endblock %}

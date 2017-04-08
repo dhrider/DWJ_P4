@@ -21,12 +21,21 @@
                             <td style="text-align: left">{{ billet.title }}</td>
                             <td>{{ billet.date | date('d-m-Y') }}</td>
                             <td>{{ billet.dateUpdate | date('d-m-Y') }}</td>
-                            <td><a href="{{ path('blog_commentAdmin', {'id' : billet.id}) }}">{{ billet.getNumberOfComments }}</a> </td>
+                            {% if billet.getNumberOfComments %}
+                                <td>
+                                    <a href="{{ path('blog_commentsByBilletAdmin', {'id' : billet.id}) }}" title="Editer commentaires">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                    {{ billet.getNumberOfComments }}
+                                </td>
+                            {% else %}
+                                <td>{{ billet.getNumberOfComments }}</td>
+                            {% endif %}
                             <td>
-                                <button type="button" class="btn btn-xs" title="Edit">
+                                <button type="button" class="btn btn-xs" title="Editer">
                                     <a href="{{ path('blog_billetAdmin_edit', {'id' : billet.id}) }}"><span class="glyphicon glyphicon-edit"></span></a>
                                 </button>
-                                <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#billetDialog{{ billet.id }}">
+                                <button type="button" class="btn btn-danger btn-xs" title="Supprimer" data-toggle="modal" data-target="#billetDialog{{ billet.id }}">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                                 <div class="modal fade" id="billetDialog{{ billet.id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
