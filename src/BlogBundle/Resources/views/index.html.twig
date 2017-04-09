@@ -3,7 +3,7 @@
 {% block body %}
     <div class="col-md-10">
         <div id="billetsChronologie">
-            {%  for billet in billets %}
+            {%  for billet in pager.currentPageResults %}
                 <article class="billetUnique">
                     <h4>Publié le : {{ billet.date | date('d-m-Y') }}</h4>
                     <header>
@@ -19,6 +19,9 @@
                     </footer>
                 </article>
             {% endfor %}
+        </div>
+        <div class="pagerfanta">
+            {{ pagerfanta(pager, 'twitter_bootstrap3', {'routeName' : 'blog_homepage_paginated'}) }}
         </div>
     </div>
 {% endblock %}

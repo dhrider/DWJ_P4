@@ -3,6 +3,8 @@
 namespace BlogBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+
 
 /**
  * BilletRepository
@@ -31,5 +33,17 @@ class BilletRepository extends EntityRepository
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    public function paginationBillet()
+    {
+        $qb = $this->createQueryBuilder('p');
+
+        $qb
+            ->select('p')
+            ->orderBy('p.id', 'DESC')
+        ;
+
+        return $qb;
     }
 }

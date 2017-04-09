@@ -23,10 +23,10 @@
                             <td>{{ billet.dateUpdate | date('d-m-Y') }}</td>
                             {% if billet.getNumberOfComments %}
                                 <td>
+                                    {{ billet.getNumberOfComments }}
                                     <a href="{{ path('blog_commentsByBilletAdmin', {'id' : billet.id}) }}" title="Editer commentaires">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
-                                    {{ billet.getNumberOfComments }}
                                 </td>
                             {% else %}
                                 <td>{{ billet.getNumberOfComments }}</td>

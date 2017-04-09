@@ -6,18 +6,35 @@ use BlogBundle\Entity\Billet;
 use BlogBundle\Form\BilletType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use BlogBundle\Form\CommentType;
 use BlogBundle\Entity\Comment;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
 
 
 class BlogController extends Controller
 {
-    public function indexAction()
+    /**
+     * @param $page
+     * @Route("/", name="blog_homepage", defaults={"page" = 1})
+     * @Route("/{page}", name="blog_homepage_paginated")
+     * @Template()
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function indexAction($page)
     {
-        $billets = $this->getRepo('Billet')->findBillets();
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $adapter = new DoctrineORMAdapter($em->getRepository('BlogBundle:Billet')->paginationBillet());
+        $pager = new Pagerfanta($adapter);
+
+        $pager->setMaxPerPage(5);
+        $pager->setCurrentPage($page);
 
         return $this->render('BlogBundle::index.html.twig', array(
-            'billets' => $billets
+            'pager' => $pager
         ));
     }
 
@@ -119,6 +136,8 @@ class BlogController extends Controller
             $em  = $this->getDoctrine()->getManager();
             $em->persist($billet);
             $em->flush();
+
+            return $this->redirectToRoute('blog_billetsAdmin');
         }
 
         return $this->render('BlogBundle:Billets:addBilletAdmin.html.twig', array(

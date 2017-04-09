@@ -2,6 +2,9 @@ blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Blog:index }
 
+blog:
+    resource: "@BlogBundle/Controller/BlogController.php"
+    type:     annotation
 
 
 
