@@ -3,15 +3,21 @@
 {% block body %}
     <div class="col-md-10">
         <div id="billetEntier">
-            <h2><u>{{ billet.title }}</u></h2>
+            <a href="#commentaires" class="pull-right btn btn-default" type="button" title="Bas de page">
+                <span class="glyphicon glyphicon-arrow-down"></span>
+            </a>
+            <h2 id="titre"><u>{{ billet.title }}</u></h2>
             <p style="text-align: justify">{{ billet.content | raw }}</p>
             <div class="comments" id="comments">
                 <div class="previousComments">
-                    <h3>Commentaires :</h3>
+                    <h3 id="commentaires">Commentaires :</h3>
                     {% include('BlogBundle:Comments:comment.html.twig') %}
                 </div>
             </div>
         </div>
+        <a href="#billetEntier" class="pull-right btn btn-default" type="button" title="Haut de page">
+            <span class="glyphicon glyphicon-arrow-up"></span>
+        </a>
     </div>
 {% endblock %}
 

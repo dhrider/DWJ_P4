@@ -3,7 +3,6 @@
 namespace BlogBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Pagerfanta\Adapter\DoctrineORMAdapter;
 
 
 /**
