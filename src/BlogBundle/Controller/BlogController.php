@@ -40,9 +40,10 @@ class BlogController extends Controller
 
     public function asideAction()
     {
-        $billetsAside = $this->getRepo('Billet')->findFiveLastTitle();
+        $em = $this->getDoctrine()->getEntityManager();
 
-        $commentAside = $this->getRepo('Comment')->findFiveLastComments();
+        $billetsAside = $em->getRepository('BlogBundle:Billet')->findFiveLastTitle();
+        $commentAside = $em->getRepository('BlogBundle:Comment')->findFiveLastComments();
 
         return $this->render('BlogBundle::aside.html.twig', array(
             'billetAside' => $billetsAside,
@@ -52,19 +53,18 @@ class BlogController extends Controller
 
     public function billetAction(Request $request)
     {
-        $billet = $this->getRepo('Billet')->find($request->get('id'));
+        $em = $this->getDoctrine()->getEntityManager();
 
-        $comments = $this->getRepo('Comment')->findCommentsByBilletId($billet->getId());
+        $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
+        $comments = $em->getRepository('BlogBundle:Comment')->findCommentsByBilletId($billet->getId());
 
         $comment = new Comment();
-
         $form = $this->createForm(CommentType::class, $comment);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid())
         {
             $comment->setBillet($billet);
 
-            $em  = $this->getDoctrine()->getManager();
             $em->persist($comment);
             $em->flush();
 
@@ -82,7 +82,9 @@ class BlogController extends Controller
 
     public function billetsAdminAction()
     {
-        $billets = $this->getRepo('Billet')->findBillets();
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $billets = $em->getRepository('BlogBundle:Billet')->findBillets();
 
         return $this->render('BlogBundle:Billets:billetsAdmin.html.twig', array(
             'billets' => $billets
@@ -103,7 +105,9 @@ class BlogController extends Controller
 
     public function editBilletAction(Request $request)
     {
-        $billet = $this->getRepo('Billet')->find($request->get('id'));
+        $em = $this->getDoctrine()->getManager();
+
+        $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
 
         $form = $this->createForm(BilletType::class, $billet);
 
@@ -113,7 +117,6 @@ class BlogController extends Controller
             $billet->setTitle($form->getData()->getTitle());
             $billet->setContent($form->getData()->getContent());
 
-            $em  = $this->getDoctrine()->getManager();
             $em->persist($billet);
             $em->flush();
 
@@ -147,7 +150,9 @@ class BlogController extends Controller
 
     public function commentsAdminAction()
     {
-        $comments = $this->getRepo('Comment')->findAllComments();
+        $em  = $this->getDoctrine()->getManager();
+
+        $comments = $em->getRepository('BlogBundle:Comment')->findAllComments();
 
         return $this->render('BlogBundle:Comments:commentsAdmin.html.twig', array(
             'comments' => $comments
@@ -156,12 +161,26 @@ class BlogController extends Controller
 
     public function commentsByBilletAdminAction(Request $request)
     {
-        $comments = $this->getRepo('Comment')->findCommentsByBilletId($request->get('id'));
-        $billet = $this->getRepo('Billet')->find($request->get('id'));
+        $em  = $this->getDoctrine()->getManager();
+
+        $comments = $em->getRepository('BlogBundle:Comment')->findCommentsByBilletId($request->get('id'));
+        $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
 
         return $this->render('BlogBundle:Comments:commentsByBilletAdmin.html.twig', array(
             'comments' => $comments,
             'billet' => $billet
+        ));
+    }
+
+    public function commentsByAuthorAdminAction(Request $request)
+    {
+        $em  = $this->getDoctrine()->getManager();
+
+        $comments = $em->getRepository('BlogBundle:Comment')->findCommentsByAuthor($request->get('author'));
+
+        return $this->render('BlogBundle:Comments:commentsByAuthorAdmin.html.twig', array(
+            'comments' => $comments,
+            'author' => $request->get('author')
         ));
     }
 
@@ -175,16 +194,5 @@ class BlogController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('blog_commentsAdmin');
-    }
-
-    public function getRepo($repository)
-    {
-        $result = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('BlogBundle:'.$repository)
-        ;
-
-        return $result;
     }
 }

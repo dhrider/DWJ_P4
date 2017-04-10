@@ -3,12 +3,12 @@
 {% block body %}
     <div class="col-md-10">
         <div class="container-fluid">
-            <h2>Modération des commentaires du billet : {{ billet.title }}</h2>
+            <h2><u>Modération des commentaires du billet :</u><span style="color: chocolate">{{ billet.title }}</span></h2>
             <br/>
             <table class="table table-bordered table-striped" id="tableauCommentsByBillet">
                 <thead>
                     <tr>
-                        <th>Auteur</th>
+                        <th>Billet</th>
                         <th>Commentaires</th>
                         <th>Date</th>
                         <th>Actions</th>
@@ -37,5 +37,11 @@
 {% endblock %}
 
 {% block aside %}
-    {{ include('BlogBundle::asideAdmin.html.twig') }}
+    <div class="col-md-2">
+        <div class="sidebar-nav-fixed pull-right affix">
+            <div class="well">
+                {{ include('BlogBundle::asideAdmin.html.twig') }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

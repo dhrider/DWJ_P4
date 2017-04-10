@@ -2,9 +2,6 @@ blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Blog:index }
 
-blog:
-    resource: "@BlogBundle/Controller/BlogController.php"
-    type:     annotation
 
 
 
@@ -45,6 +42,10 @@ blog_commentsByBilletAdmin:
     requirements:
         id: '\d+'
 
+blog_commentsByAuthorAdmin:
+    path: /admin/comments/author
+    defaults: { _controller: BlogBundle:Blog:commentsByAuthorAdmin}
+
 blog_commentsAdmin_delete:
     path:    /admin/comments/delete
     defaults: { _controller: BlogBundle:Blog:deleteComment }
@@ -63,3 +64,10 @@ blog_login_check:
 blog_logout:
     path: /logout
     defaults: { _controller: BlogBundle:Security:logout }
+
+
+
+
+blog:
+    resource: "@BlogBundle/Controller/BlogController.php"
+    type:     annotation

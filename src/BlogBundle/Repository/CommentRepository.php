@@ -25,6 +25,19 @@ class CommentRepository extends EntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    public function findCommentsByAuthor($author)
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        $qb
+            ->select('c')
+            ->where('c.author = :author')
+            ->setParameter('author',$author)
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
+
     public function findFiveLastComments()
     {
         $qb = $this->createQueryBuilder('c');

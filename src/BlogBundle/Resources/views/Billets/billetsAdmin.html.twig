@@ -3,7 +3,7 @@
 {% block body %}
     <div class="col-md-10">
         <div class="container-fluid col-md-12">
-            <h2>Administration des billets :</h2>
+            <h2><u>Administration des billets :</u></h2>
             <br/>
             <table class="table table-bordered table-striped" id="tableauBillets">
                 <thead>
@@ -18,7 +18,7 @@
                 <tbody id="corpsTableauBillets">
                     {% for billet in billets %}
                         <tr>
-                            <td style="text-align: left">{{ billet.title }}</td>
+                            <td style="text-align: left"><a href="{{ path('blog_billet', {'id' : billet.id}) }}">{{ billet.title }}</a></td>
                             <td>{{ billet.date | date('d-m-Y') }}</td>
                             <td>{{ billet.dateUpdate | date('d-m-Y') }}</td>
                             {% if billet.getNumberOfComments %}
@@ -69,5 +69,11 @@
 {% endblock %}
 
 {% block aside %}
-    {{ include('BlogBundle::asideAdmin.html.twig') }}
+    <div class="col-md-2">
+        <div class="sidebar-nav-fixed pull-right affix">
+            <div class="well">
+                {{ include('BlogBundle::asideAdmin.html.twig') }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

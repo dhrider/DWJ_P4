@@ -5,7 +5,7 @@
         <div id="billetsChronologie">
             {%  for billet in pager.currentPageResults %}
                 <article class="billetUnique">
-                    <h4>Publié le : {{ billet.date | date('d-m-Y') }}</h4>
+                    <h4>Publié le : <span style="color: chocolate">{{ billet.date | date('d-m-Y') }}</span></h4>
                     <header>
                         <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h3>{{ billet.title }}</h3></a>
                     </header>

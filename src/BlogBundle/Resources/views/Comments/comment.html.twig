@@ -1,16 +1,23 @@
 {% for comment in comments %}
     <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
         <header>
-            <p>{{ comment.author }} a commenté le {{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</p>
+            <p>
+                <u>
+                    <span style="color: chocolate">{{ comment.author }}</span> a commenté le
+                    <span style="color: chocolate">{{ comment.date | date('d-m-Y') }}</span>  à
+                    <span style="color: chocolate">{{ comment.date | date('H:i:s')}}</span>
+                </u>
+            </p>
         </header>
         <p>{{ comment.content }}</p>
     </article>
 {% else %}
     <p>Pas de commentaires.</p>
 {% endfor %}
-
+<hr/>
 <div class="well container-fluid col-md-5">
     {{ form_start(form) }}
+        <h3 style="margin-top: 0; margin-bottom: 5px">Votre commentaire :</h3>
         {{ form_row(form.author) }}
         {{ form_row(form.content) }}
         {{ form_widget(form.submit) }}
