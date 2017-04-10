@@ -20,13 +20,15 @@ class BilletType extends AbstractType
             ->add('title',          TextType::class, array(
                 'attr' => array(
                     'required'
-                )
+                ),
+                'label' => 'Titre :'
             ))
             ->add('content',        TextareaType::class, array(
                 'attr' => array(
                     'class' => 'mce-tinymce',
                     'required'
-                )
+                ),
+                'label' => 'Texte :'
             ))
             ->add('Submit',         SubmitType::class, array(
                 'attr' => array(

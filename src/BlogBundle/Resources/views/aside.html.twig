@@ -1,18 +1,24 @@
-<div id="listeBillets">
-    <h4><u>5 dernières publication</u></h4>
-    <hr/>
-    {%  for billet in billetAside %}
-        <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h5 style="text-align: left">{{ billet.title }}</h5></a>
-    {% endfor %}
-</div>
-<hr/>
-<div id="listeComments">
-    <h4><u>5 derniers commentaires</u></h4>
-    <hr/>
-    {%  for comment in commentAside %}
-        <p>
-            <a href="{{ path('blog_billet', {'id' : comment.billet.id}) }}#comments">{{ comment.author }}</a>
-            sur <strong>{{ comment.billet.title }}</strong>
-        </p>
-    {% endfor %}
+<div class="col-md-2">
+    <div class="sidebar-nav-fixed pull-right affix">
+        <div class="well">
+            <div id="listeBillets">
+                <h4><u>5 dernières publication</u></h4>
+                <hr/>
+                {%  for billet in billetAside %}
+                    <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h5 style="text-align: left">{{ billet.title }}</h5></a>
+                {% endfor %}
+            </div>
+            <hr/>
+            <div id="listeComments">
+                <h4><u>5 derniers commentaires</u></h4>
+                <hr/>
+                {%  for comment in commentAside %}
+                    <p>
+                        <a href="{{ path('blog_billet', {'id' : comment.billet.id}) }}#comments">{{ comment.author }}</a>
+                        sur <strong>{{ comment.billet.title }}</strong>
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>

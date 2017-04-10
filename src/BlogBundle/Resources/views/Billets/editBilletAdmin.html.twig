@@ -1,23 +1,20 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-<div class="col-md-10" xmlns="http://www.w3.org/1999/html">
-    <div class="container-fluid">
-        <h2><u>Edition du billet :</u> <span style="color: chocolate">{{ billet.title }}</span></h2>
-        <br/>
-        {{ form_start(form) }}
-        {{ form_end(form) }}
+    <div class="col-md-10" xmlns="http://www.w3.org/1999/html">
+        <div class="container-fluid">
+            <h2><u>Edition du billet :</u> <span style="color: chocolate">{{ billet.title }}</span></h2>
+            <br/>
+            {{ form_start(form) }}
+            {{ form_end(form) }}
+            <a href="javascript:history.go(-1)" class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-arrow-left"></span> Retour liste billets
+            </a>
+        </div>
     </div>
-</div>
-{{ tinymce_init() }}
+    {{ tinymce_init() }}
 {% endblock %}
 
 {% block aside %}
-    <div class="col-md-2">
-        <div class="sidebar-nav-fixed pull-right affix">
-            <div class="well">
-                {{ include('BlogBundle::asideAdmin.html.twig') }}
-            </div>
-        </div>
-    </div>
+    {{ include('BlogBundle::asideAdmin.html.twig') }}
 {% endblock %}

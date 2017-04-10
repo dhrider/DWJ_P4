@@ -32,16 +32,13 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <a href="javascript:history.go(-1)" class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-arrow-left"></span> Retour liste billets
+            </a>
         </div>
     </div>
 {% endblock %}
 
 {% block aside %}
-    <div class="col-md-2">
-        <div class="sidebar-nav-fixed pull-right affix">
-            <div class="well">
-                {{ include('BlogBundle::asideAdmin.html.twig') }}
-            </div>
-        </div>
-    </div>
+    {{ include('BlogBundle::asideAdmin.html.twig') }}
 {% endblock %}
