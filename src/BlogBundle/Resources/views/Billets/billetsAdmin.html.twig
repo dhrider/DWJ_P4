@@ -24,7 +24,7 @@
                             {% if billet.getNumberOfComments %}
                                 <td>
                                     {{ billet.getNumberOfComments }}
-                                    <a href="{{ path('blog_commentsByBilletAdmin', {'id' : billet.id}) }}" title="Editer commentaires">
+                                    <a href="{{ path('blog_adminCommentsByBillet', {'id' : billet.id}) }}" title="Editer commentaires">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
@@ -33,7 +33,7 @@
                             {% endif %}
                             <td>
                                 <button type="button" class="btn btn-xs" title="Editer">
-                                    <a href="{{ path('blog_billetAdmin_edit', {'id' : billet.id}) }}"><span class="glyphicon glyphicon-edit"></span></a>
+                                    <a href="{{ path('blog_adminBillet_edit', {'id' : billet.id}) }}"><span class="glyphicon glyphicon-edit"></span></a>
                                 </button>
                                 <button type="button" class="btn btn-danger btn-xs" title="Supprimer" data-toggle="modal" data-target="#billetDialog{{ billet.id }}">
                                     <span class="glyphicon glyphicon-remove"></span>
@@ -50,7 +50,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
-                                                <a href="{{ path('blog_billetsAdmin_delete', { 'id': billet.id }) }}" class="btn btn-danger">Oui</a>
+                                                <a href="{{ path('blog_adminBillet_delete', { 'id': billet.id }) }}" class="btn btn-danger">Oui</a>
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <a href="{{ path('blog_billetAdmin_add') }}" type="button" class="btn btn-primary pull-right" title="Add">
+            <a href="{{ path('blog_adminBillet_add') }}" type="button" class="btn btn-primary pull-right" title="Add">
                 <span class="glyphicon glyphicon-pencil"> Nouveau billet</span>
             </a>
         </div>

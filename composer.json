@@ -1,5 +1,6 @@
 {
     "name": "utilisateur/blog-dwj-p4",
+    "description": "blog écrivain",
     "license": "proprietary",
     "type": "project",
     "autoload": {

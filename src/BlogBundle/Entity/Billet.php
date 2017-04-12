@@ -5,6 +5,7 @@ namespace BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="billet")
@@ -35,12 +36,14 @@ class Billet
     /**
      * @var string
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\NotBlank()
      */
     protected $title;
 
     /**
      * @var string
      * @ORM\Column(name="content", type="text")
+     * @Assert\NotBlank()
      */
     protected $content;
 

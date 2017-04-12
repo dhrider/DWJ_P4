@@ -1,6 +1,6 @@
 <?php
 
-namespace BlogBundle\Form;
+namespace BlogBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CommentType extends AbstractType
+class BilletType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -17,23 +17,20 @@ class CommentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('author',     TextType::class, array(
+            ->add('title',          TextType::class, array(
                 'attr' => array(
-                    'class' => 'author',
-                    'required',
-                    'placeholder' => 'Entrez votre nom'
+                    'required'
                 ),
-                'label' => false
+                'label' => 'Titre :'
             ))
-            ->add('content',   TextareaType::class, array(
+            ->add('content',        TextareaType::class, array(
                 'attr' => array(
-                    'class' => 'comment',
-                    'required',
-                    'placeholder' => 'Votre commentaire'
+                    'class' => 'mce-tinymce',
+                    'required'
                 ),
-                'label' => false
+                'label' => 'Texte :'
             ))
-            ->add('submit',     SubmitType::class, array(
+            ->add('Submit',         SubmitType::class, array(
                 'attr' => array(
                     'class' => 'btn-primary'
                 ),
@@ -48,7 +45,7 @@ class CommentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'BlogBundle\Entity\Comment'
+            'data_class' => 'BlogBundle\Entity\Billet'
         ));
     }
 
@@ -57,7 +54,7 @@ class CommentType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'blogbundle_comment';
+        return 'blogbundle_billet';
     }
 
 

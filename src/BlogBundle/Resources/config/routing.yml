@@ -11,44 +11,47 @@ blog_billet:
     requirements:
         id: '\d+'
 
-blog_billetsAdmin:
+
+
+
+blog_adminBillets:
     path:    /admin/billets
-    defaults: { _controller: BlogBundle:Blog:billetsAdmin }
+    defaults: { _controller: BlogBundle:Admin/Blog:adminBillets }
 
-blog_billetsAdmin_delete:
+blog_adminBillet_delete:
     path:    /admin/billets/delete
-    defaults: { _controller: BlogBundle:Blog:deleteBillet}
+    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletDelete}
 
-blog_billetAdmin_add:
+blog_adminBillet_add:
     path:    /admin/billet/add
-    defaults: { _controller: BlogBundle:Blog:addBillet}
+    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletAdd}
 
-blog_billetAdmin_edit:
+blog_adminBillet_edit:
     path:    /admin/billet/{id}/edit
-    defaults: { _controller: BlogBundle:Blog:editBillet}
+    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletEdit}
     requirements:
         id: '\d+'
 
 
 
 
-blog_commentsAdmin:
+blog_adminComments:
     path:    /admin/comments
-    defaults: { _controller: BlogBundle:Blog:commentsAdmin }
+    defaults: { _controller: BlogBundle:Admin/Comments:adminComments }
 
-blog_commentsByBilletAdmin:
+blog_adminCommentsByBillet:
     path: /admin/comment/billet/{id}
-    defaults: { _controller: BlogBundle:Blog:commentsByBilletAdmin}
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByBillet}
     requirements:
         id: '\d+'
 
-blog_commentsByAuthorAdmin:
+blog_adminCommentsByAuthor:
     path: /admin/comments/author
-    defaults: { _controller: BlogBundle:Blog:commentsByAuthorAdmin}
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByAuthor}
 
-blog_commentsAdmin_delete:
+blog_adminComment_delete:
     path:    /admin/comments/delete
-    defaults: { _controller: BlogBundle:Blog:deleteComment }
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete}
 
 
 
