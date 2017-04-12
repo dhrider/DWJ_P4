@@ -162,3 +162,4 @@ class Billet
         return count($this->comments);
     }
 }
+

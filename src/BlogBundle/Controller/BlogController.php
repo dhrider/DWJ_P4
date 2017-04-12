@@ -78,3 +78,4 @@ class BlogController extends Controller
         ));
     }
 }
+

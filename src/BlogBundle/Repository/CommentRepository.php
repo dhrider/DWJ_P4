@@ -68,3 +68,4 @@ class CommentRepository extends EntityRepository
     }
 
 }
+
