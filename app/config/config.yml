@@ -85,3 +85,7 @@ services:
        class: Twig_Extensions_Extension_Text
        tags:
            - { name: twig.extension }
+
+rules:
+     symfony.routing.action_not_restricted_by_method:
+        enabled: true
