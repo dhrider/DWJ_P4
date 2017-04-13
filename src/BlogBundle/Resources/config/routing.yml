@@ -22,17 +22,17 @@ blog_adminBillets:
 
 blog_adminBillet_delete:
     path:    /admin/billets/delete
-    methods: [ post ]
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletDelete}
 
 blog_adminBillet_add:
     path:    /admin/billet/add
-    methods: [ post ]
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletAdd}
 
 blog_adminBillet_edit:
     path:    /admin/billet/{id}/edit
-    methods: [ post ]
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletEdit}
     requirements:
         id: '\d+'
@@ -47,19 +47,19 @@ blog_adminComments:
 
 blog_adminCommentsByBillet:
     path: /admin/comment/billet/{id}
-    methods: [ get ]
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByBillet}
     requirements:
         id: '\d+'
 
 blog_adminCommentsByAuthor:
     path: /admin/comments/author
-    methods: [ get ]
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByAuthor}
 
 blog_adminComment_delete:
     path:    /admin/comments/delete
-    methods: [ get ]
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete}
 
 
@@ -72,7 +72,7 @@ blog_login:
 
 blog_login_check:
     path: /login/check
-    methods: [ post ]
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Security:loginCheck }
 
 blog_logout:
