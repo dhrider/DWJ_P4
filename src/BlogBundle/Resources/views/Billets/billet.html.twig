@@ -7,7 +7,7 @@
                 <span class="glyphicon glyphicon-arrow-down"></span>
             </a>
             <h2 id="titre"><u>{{ billet.title }}</u></h2>
-            <p style="text-align: justify">{{ billet.content | raw }}</p>
+            <p style="text-align: justify">{{ billet.content | purify }}</p>
             <div class="comments" id="comments">
                 <div class="previousComments">
                     <h3 id="commentaires">Commentaires :</h3>

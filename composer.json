@@ -5,7 +5,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "BlogBundle\\": "src/"
+            "": "src/"
         },
         "classmap": [
             "app/AppKernel.php",
@@ -36,7 +36,8 @@
         "stfalcon/tinymce-bundle": "^2.0",
         "white-october/pagerfanta-bundle": "^1.0",
         "doctrine/doctrine-migrations-bundle": "^1.0",
-        "ocramius/proxy-manager": "~1.0"
+        "ocramius/proxy-manager": "~1.0",
+        "exercise/htmlpurifier-bundle": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
