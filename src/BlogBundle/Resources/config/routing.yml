@@ -1,5 +1,6 @@
 blog_homepage:
     path:     /
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Blog:index }
 
 
@@ -7,6 +8,7 @@ blog_homepage:
 
 blog_billet:
     path:     /billet/{id}
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Blog:billet }
     requirements:
         id: '\d+'
@@ -15,18 +17,22 @@ blog_billet:
 
 blog_adminBillets:
     path:    /admin/billets
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBillets }
 
 blog_adminBillet_delete:
     path:    /admin/billets/delete
+    methods: [ post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletDelete}
 
 blog_adminBillet_add:
     path:    /admin/billet/add
+    methods: [ post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletAdd}
 
 blog_adminBillet_edit:
     path:    /admin/billet/{id}/edit
+    methods: [ post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletEdit}
     requirements:
         id: '\d+'
@@ -36,20 +42,24 @@ blog_adminBillet_edit:
 
 blog_adminComments:
     path:    /admin/comments
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminComments }
 
 blog_adminCommentsByBillet:
     path: /admin/comment/billet/{id}
+    methods: [ get ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByBillet}
     requirements:
         id: '\d+'
 
 blog_adminCommentsByAuthor:
     path: /admin/comments/author
+    methods: [ get ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByAuthor}
 
 blog_adminComment_delete:
     path:    /admin/comments/delete
+    methods: [ get ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete}
 
 
@@ -57,14 +67,17 @@ blog_adminComment_delete:
 
 blog_login:
     path: /login
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Security:login }
 
 blog_login_check:
     path: /login/check
+    methods: [ post ]
     defaults: { _controller: BlogBundle:Security:loginCheck }
 
 blog_logout:
     path: /logout
+    methods: [ get, post ]
     defaults: { _controller: BlogBundle:Security:logout }
 
 
