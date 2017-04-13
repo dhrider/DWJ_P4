@@ -59,7 +59,7 @@ blog_adminCommentsByAuthor:
 
 blog_adminComment_delete:
     path:    /admin/comments/delete
-    methods: [ get ]
+    methods: [ delete ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete}
 
 
