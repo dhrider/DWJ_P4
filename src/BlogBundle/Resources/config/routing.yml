@@ -22,7 +22,7 @@ blog_adminBillets:
 
 blog_adminBillet_delete:
     path:    /admin/billets/delete
-    methods: [ get ]
+    methods: [ delete ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletDelete}
 
 blog_adminBillet_add:
