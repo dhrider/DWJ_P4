@@ -3,50 +3,58 @@
 {% block body %}
     <div class="col-md-10">
         <div class="container-fluid">
-        <h2><u>Modération des commentaires :</u></h2>
-        <br/>
-        <table class="table table-bordered table-striped" id="tableauComments">
-            <thead>
-                <tr>
-                    <th>Auteur</th>
-                    <th>Commentaires</th>
-                    <th>Billet</th>
-                    <th>Date</th>
-                    <th>Signalé</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="corpsTableauComments">
-                {% for comment in comments %}
+            <h2><u>Modération des commentaires :</u></h2>
+            <br/>
+            <table class="table table-bordered table-striped" id="tableauComments">
+                <thead>
                     <tr>
-                        <td style="text-align: left; padding-left: 5px">
-                            <a href="{{ path('blog_adminCommentsByAuthor', {'author' : comment.author}) }}">{{ comment.author }}</a>
-                        </td>
-                        <td style="text-align: left; padding-left: 5px">
-                            {% if comment.content | length >= 65 %}
-                                {{ comment.content | truncate(65) }}
-                                {{ include('BlogBundle:Comments:commentModalDialog.html.twig') }}
-                            {% else %}
-                                {{ comment.content }}
-                            {% endif %}
-                        </td>
-                        <td style="text-align: left; padding-left: 5px">
-                            <a href="{{ path('blog_billet', {'id' : comment.billet.id}) }}">{{ comment.billet.title }}</a>
-                        </td>
-                        <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
-                        <td>
-                            {%  if comment.signaled %}
-                                <a href="{{ path('blog_adminComments_signaled') }}">OUI</a>
-                            {% else %}
-                                NON
-                            {% endif %}
-                        </td>
-                        <td>{{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}</td>
+                        <th>Auteur</th>
+                        <th>Commentaires</th>
+                        <th>Billet</th>
+                        <th>Date</th>
+                        <th>Signalé</th>
+                        <th>Actions</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody id="corpsTableauComments">
+                    {% for comment in comments %}
+                        {% if comment.signaled %}
+                            <tr class="danger">
+                            {% set signaled = true %}
+                        {% else %}
+                            {% set signaled = false %}
+                            <tr>
+                        {% endif %}
+                            <td style="text-align: left; padding-left: 5px">
+                                <a href="{{ path('blog_adminCommentsByAuthor', {'author' : comment.author}) }}">{{ comment.author }}</a>
+                            </td>
+                            <td style="text-align: left; padding-left: 5px">
+                                {% if comment.content | length >= 65 %}
+                                    {{ comment.content | truncate(65) }}
+                                    {{ include('BlogBundle:Comments:commentModalDialog.html.twig') }}
+                                {% else %}
+                                    {{ comment.content }}
+                                {% endif %}
+                            </td>
+                            <td style="text-align: left; padding-left: 5px">
+                                <a href="{{ path('blog_billet', {'id' : comment.billet.id}) }}">{{ comment.billet.title }}</a>
+                            </td>
+                            <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
+                            {%  if comment.signaled %}
+                                <td>
+                                    <a href="{{ path('blog_adminComments_signaled') }}">OUI</a>
+                                </td>
+                            {% else %}
+                                <td>
+                                    Non
+                                </td>
+                            {% endif %}
+                            <td>{{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}
 
