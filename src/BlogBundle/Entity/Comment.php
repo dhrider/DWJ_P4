@@ -42,6 +42,11 @@ class Comment
     protected $signaled;
 
     /**
+     * @ORM\Column(name="dateSignaled", type="datetime")
+     */
+    protected $dateSignaled;
+
+    /**
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Billet", inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -115,6 +120,22 @@ class Comment
     public function setSignaled($signaled)
     {
         $this->signaled = $signaled;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateSignaled()
+    {
+        return $this->dateSignaled;
+    }
+
+    /**
+     * @param mixed $dateSignaled
+     */
+    public function setDateSignaled($dateSignaled)
+    {
+        $this->dateSignaled = $dateSignaled;
     }
 
 

@@ -38,6 +38,19 @@ class CommentRepository extends EntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    public function findCommentsSignaled()
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        $qb
+            ->select('c')
+            ->where('c.signaled = :signaled')
+            ->setParameter('signaled', true)
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
+
     public function findFiveLastComments()
     {
         $qb = $this->createQueryBuilder('c');

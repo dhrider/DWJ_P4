@@ -43,6 +43,17 @@ class CommentsController extends Controller
         ));
     }
 
+    public function adminCommentsSignaledAction()
+    {
+        $em  = $this->getDoctrine()->getManager();
+
+        $comments = $em->getRepository('BlogBundle:Comment')->findCommentsSignaled();
+
+        return $this->render('BlogBundle:Comments:commentsSignaledAdmin.html.twig', array(
+            'comments' => $comments
+        ));
+    }
+
     public function adminCommentDeleteAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

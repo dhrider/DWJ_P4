@@ -84,6 +84,7 @@ class BlogController extends Controller
         $comment = $em->getRepository('BlogBundle:Comment')->find($request->get('id'));
 
         $comment->setSignaled(true);
+        $comment->setDateSignaled(new \DateTime());
 
         $em->persist($comment);
         $em->flush();

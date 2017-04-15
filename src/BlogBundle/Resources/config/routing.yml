@@ -30,17 +30,17 @@ blog_adminBillets:
 blog_adminBillet_delete:
     path:    /admin/billets/delete
     methods: [ delete ]
-    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletDelete}
+    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletDelete }
 
 blog_adminBillet_add:
     path:    /admin/billet/add
     methods: [ get, post ]
-    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletAdd}
+    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletAdd }
 
 blog_adminBillet_edit:
     path:    /admin/billet/{id}/edit
     methods: [ get, post ]
-    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletEdit}
+    defaults: { _controller: BlogBundle:Admin/Blog:adminBilletEdit }
     requirements:
         id: '\d+'
 
@@ -55,19 +55,24 @@ blog_adminComments:
 blog_adminCommentsByBillet:
     path: /admin/comment/billet/{id}
     methods: [ get ]
-    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByBillet}
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByBillet }
     requirements:
         id: '\d+'
 
 blog_adminCommentsByAuthor:
     path: /admin/comments/author
     methods: [ get ]
-    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByAuthor}
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsByAuthor }
+
+blog_adminComments_signaled:
+    path: /admin/comments/signaled
+    methods: [ get ]
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentsSignaled }
 
 blog_adminComment_delete:
     path:    /admin/comments/delete
     methods: [ delete ]
-    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete}
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete }
 
 
 
