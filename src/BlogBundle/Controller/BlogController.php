@@ -76,5 +76,21 @@ class BlogController extends Controller
             'form' => $form->createView()
         ));
     }
+
+    public function commentSignaledAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $comment = $em->getRepository('BlogBundle:Comment')->find($request->get('id'));
+
+        $comment->setSignaled(true);
+
+        $em->persist($comment);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('blog_billet',
+            ['id' => $comment->getBillet()->getId()]).'#comments')
+        ;
+    }
 }
 

@@ -32,6 +32,22 @@ body {
     background: #eee;
 }
 
+.comment {
+    position: relative;
+}
+
+#signalementComment {
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
+
+#okSignalement {
+    background-color:red;
+    color: white;
+    padding: 2px;
+}
+
 #billetsChronologie h3 {
     margin-top: 10px;
 }

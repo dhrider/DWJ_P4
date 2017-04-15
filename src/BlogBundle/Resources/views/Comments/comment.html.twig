@@ -1,5 +1,5 @@
 {% for comment in comments %}
-    <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
+    <article class="comment {{ cycle(['odd', 'even'], loop.index0) }} comment" id="comment-{{ comment.id }}">
         <header>
             <p>
                 <u>
@@ -7,6 +7,15 @@
                     <span style="color: chocolate">{{ comment.date | date('d-m-Y') }}</span>  à
                     <span style="color: chocolate">{{ comment.date | date('H:i:s')}}</span>
                 </u>
+                <div id="signalementComment">
+                    {%  if not comment.signaled %}
+                        <a type="button" class="btn btn-danger btn-xs" href="{{ path('blog_comment_signaled', {'id' : comment.id}) }}">
+                            Signaler
+                        </a>
+                    {% else %}
+                        <span id="okSignalement">Commentaire signalé !</span>
+                    {% endif %}
+                </div>
             </p>
         </header>
         <p>{{ comment.content }}</p>

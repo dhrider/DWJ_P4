@@ -12,6 +12,7 @@
                     <th>Commentaires</th>
                     <th>Billet</th>
                     <th>Date</th>
+                    <th>Signalé</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -33,6 +34,13 @@
                             <a href="{{ path('blog_billet', {'id' : comment.billet.id}) }}">{{ comment.billet.title }}</a>
                         </td>
                         <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
+                        <td>
+                            {%  if comment.signaled %}
+                                OUI
+                            {% else %}
+                                NON
+                            {% endif %}
+                        </td>
                         <td>{{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}</td>
                     </tr>
                 {% endfor %}

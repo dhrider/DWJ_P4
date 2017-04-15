@@ -37,6 +37,11 @@ class Comment
     protected $content;
 
     /**
+     * @ORM\Column(name="signaled", type="boolean")
+     */
+    protected $signaled;
+
+    /**
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Billet", inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -45,6 +50,7 @@ class Comment
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->signaled = false;
     }
 
     /**
@@ -93,6 +99,22 @@ class Comment
     public function setContent($content)
     {
         $this->content = $content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSignaled()
+    {
+        return $this->signaled;
+    }
+
+    /**
+     * @param mixed $signaled
+     */
+    public function setSignaled($signaled)
+    {
+        $this->signaled = $signaled;
     }
 
 

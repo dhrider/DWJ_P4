@@ -13,6 +13,13 @@ blog_billet:
     requirements:
         id: '\d+'
 
+blog_comment_signaled:
+    path: /comment/{id}/signaled
+    methods: [ get, post ]
+    defaults: { _controller: BlogBundle:Blog:commentSignaled }
+    requirements:
+        id: '\d+'
+
 
 
 blog_adminBillets:
