@@ -35,7 +35,10 @@
                         </td>
                         <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
                         <td>{{ comment.dateSignaled | date('d-m-Y') }} à {{ comment.dateSignaled | date('H:i:s')}}</td>
-                        <td>{{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}</td>
+                        <td>
+                            {{ include('BlogBundle:Comments:commentModalEdit.html.twig') }}
+                            {{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>

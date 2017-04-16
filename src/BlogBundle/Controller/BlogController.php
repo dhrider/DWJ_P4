@@ -4,6 +4,7 @@ namespace BlogBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use BlogBundle\Form\Type\CommentType;
@@ -54,6 +55,11 @@ class BlogController extends Controller
 
         $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
         $comments = $em->getRepository('BlogBundle:Comment')->findCommentsByBilletId($billet->getId());
+
+        if (null == $billet)
+        {
+            throw new NotFoundHttpException("Le billet d'id ".$request->get('id')." n'existe pas.");
+        }
 
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);

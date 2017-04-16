@@ -3,6 +3,7 @@
 namespace BlogBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
 
 class CommentsController extends Controller
@@ -60,7 +61,31 @@ class CommentsController extends Controller
 
         $comment =$em->getRepository('BlogBundle:Comment')->find($request->get('id'));
 
+        if (null == $comment)
+        {
+            throw new NotFoundHttpException("Le commentaire d'id ".$request->get('id')." n'existe pas.");
+        }
+
         $em->remove($comment);
+        $em->flush();
+
+        return $this->redirectToRoute('blog_adminComments');
+    }
+
+    public function adminCommentEditAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $comment =$em->getRepository('BlogBundle:Comment')->find($request->get('id'));
+
+        if (null == $comment)
+        {
+            throw new NotFoundHttpException("Le commentaire d'id ".$request->get('id')." n'existe pas.");
+        }
+
+        $comment->setSignaled(false);
+
+        $em->persist($comment);
         $em->flush();
 
         return $this->redirectToRoute('blog_adminComments');

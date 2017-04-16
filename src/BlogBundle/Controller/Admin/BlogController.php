@@ -4,6 +4,7 @@ namespace BlogBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use BlogBundle\Form\Type\BilletType;
 use BlogBundle\Entity\Billet;
 
@@ -26,6 +27,11 @@ class BlogController extends Controller
 
         $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
 
+        if (null == $billet)
+        {
+            throw new NotFoundHttpException("Le billet d'id ".$request->get('id')." n'existe pas.");
+        }
+
         $em->remove($billet);
         $em->flush();
 
@@ -37,6 +43,11 @@ class BlogController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
+
+        if (null == $billet)
+        {
+            throw new NotFoundHttpException("Le billet d'id ".$request->get('id')." n'existe pas.");
+        }
 
         $form = $this->createForm(BilletType::class, $billet);
 

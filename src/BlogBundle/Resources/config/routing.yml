@@ -14,11 +14,9 @@ blog_billet:
         id: '\d+'
 
 blog_comment_signaled:
-    path: /comment/{id}/signaled
+    path: /comment/signaled
     methods: [ get, post ]
     defaults: { _controller: BlogBundle:Blog:commentSignaled }
-    requirements:
-        id: '\d+'
 
 
 
@@ -38,11 +36,9 @@ blog_adminBillet_add:
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletAdd }
 
 blog_adminBillet_edit:
-    path:    /admin/billet/{id}/edit
+    path:    /admin/billet/edit
     methods: [ get, post ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletEdit }
-    requirements:
-        id: '\d+'
 
 
 
@@ -74,6 +70,10 @@ blog_adminComment_delete:
     methods: [ delete ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete }
 
+blog_adminComment_edit:
+    path:    /admin/comment/edit
+    methods: [ get, post ]
+    defaults: { _controller: BlogBundle:Admin/Comments:adminCommentEdit }
 
 
 
