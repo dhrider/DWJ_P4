@@ -56,7 +56,7 @@ class BlogController extends Controller
         $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
         $comments = $em->getRepository('BlogBundle:Comment')->findCommentsByBilletId($billet->getId());
 
-        if (null == $billet)
+        if (null === $billet)
         {
             throw new NotFoundHttpException("Le billet d'id ".$request->get('id')." n'existe pas.");
         }

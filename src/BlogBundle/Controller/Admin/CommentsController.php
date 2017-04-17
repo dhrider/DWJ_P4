@@ -61,7 +61,7 @@ class CommentsController extends Controller
 
         $comment =$em->getRepository('BlogBundle:Comment')->find($request->get('id'));
 
-        if (null == $comment)
+        if (null === $comment)
         {
             throw new NotFoundHttpException("Le commentaire d'id ".$request->get('id')." n'existe pas.");
         }
@@ -78,7 +78,7 @@ class CommentsController extends Controller
 
         $comment =$em->getRepository('BlogBundle:Comment')->find($request->get('id'));
 
-        if (null == $comment)
+        if (null === $comment)
         {
             throw new NotFoundHttpException("Le commentaire d'id ".$request->get('id')." n'existe pas.");
         }
