@@ -27,6 +27,11 @@
                                     <a href="{{ path('blog_adminCommentsByBillet', {'id' : billet.id}) }}" title="Editer commentaires">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
+                                    {% if billet.hasSignaledComment %}
+                                        <a href="{{ path('blog_adminComments_signaled') }}" title="Commentaire(s) signalé(s)">
+                                            <span class="glyphicon glyphicon-warning-sign signaled"></span>
+                                        </a>
+                                    {% endif %}
                                 </td>
                             {% else %}
                                 <td>{{ billet.getNumberOfComments }}</td>

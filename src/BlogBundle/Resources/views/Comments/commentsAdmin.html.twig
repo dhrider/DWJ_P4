@@ -40,7 +40,7 @@
                             <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
                             {%  if comment.signaled %}
                                 <td>
-                                    <a href="{{ path('blog_adminComments_signaled') }}">OUI</a>
+                                    <a href="{{ path('blog_adminComments_signaled') }}" class="signaled">OUI</a>
                                 </td>
                             {% else %}
                                 <td>

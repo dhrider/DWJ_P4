@@ -161,5 +161,20 @@ class Billet
     {
         return count($this->comments);
     }
+
+    public function hasSignaledComment()
+    {
+        $nbSignaled = 0;
+
+        foreach ($this->comments as $comment)
+        {
+            if ($comment->getSignaled() == true)
+            {
+                $nbSignaled++;
+            }
+        }
+
+        return $nbSignaled;
+    }
 }
 

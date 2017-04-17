@@ -48,6 +48,14 @@ body {
     padding: 2px;
 }
 
+.signaled {
+    color: red;
+}
+
+.signaled:hover {
+    color: red;
+}
+
 #billetsChronologie h3 {
     margin-top: 10px;
 }
