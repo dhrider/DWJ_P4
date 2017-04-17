@@ -42,7 +42,7 @@ class Comment
     protected $signaled;
 
     /**
-     * @ORM\Column(name="dateSignaled", type="datetime")
+     * @ORM\Column(name="dateSignaled", type="datetime", nullable=true)
      */
     protected $dateSignaled;
 
@@ -55,6 +55,7 @@ class Comment
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->dateSignaled = null;
         $this->signaled = false;
     }
 

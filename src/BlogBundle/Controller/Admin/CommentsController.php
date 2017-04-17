@@ -84,6 +84,7 @@ class CommentsController extends Controller
         }
 
         $comment->setSignaled(false);
+        $comment->setDateSignaled(null);
 
         $em->persist($comment);
         $em->flush();
