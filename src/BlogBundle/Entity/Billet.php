@@ -168,7 +168,7 @@ class Billet
 
         foreach ($this->comments as $comment)
         {
-            if ($comment->getSignaled() == true)
+            if ($comment->getSignaled() === true)
             {
                 $nbSignaled++;
             }
