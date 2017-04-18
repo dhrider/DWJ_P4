@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0ac262eb-7692-4835-8a3d-103e7d92850d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlogBundle/Entity/Comment.php" afterPath="$PROJECT_DIR$/src/BlogBundle/Entity/Comment.php" />
     </list>
     <ignored path="BlogDwjP4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +31,7 @@
     <favorites_list name="BlogDwjP4" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7945098">
+    <splitter split-orientation="horizontal" split-proportion="0.67607844">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
@@ -56,18 +57,50 @@
           <file leaf-file-name="Billet.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/Billet.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
+                <state relative-caret-position="2580">
                   <caret line="174" column="9" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/composer.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                <state relative-caret-position="60">
+                  <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config_prod.yml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Comment.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/Comment.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="266">
+                  <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#74#106#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="182">
+                  <caret line="53" column="39" selection-start-line="46" selection-start-column="0" selection-end-line="53" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -115,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/BlogBundle/Resources/views/Comments/commentsByBillet.html.twig" />
         <option value="$PROJECT_DIR$/src/BlogBundle/Resources/views/Comments/comments.byBillet.html.twig" />
         <option value="$PROJECT_DIR$/src/BlogBundle/Resources/views/Comments/commentAdmin.html.twig" />
         <option value="$PROJECT_DIR$/src/BlogBundle/Form/BilletType.php" />
@@ -164,8 +196,9 @@
         <option value="$PROJECT_DIR$/src/BlogBundle/Resources/views/Billets/billetsAdmin.html.twig" />
         <option value="$PROJECT_DIR$/src/BlogBundle/Resources/Public/css/style.css" />
         <option value="$PROJECT_DIR$/src/BlogBundle/Controller/Admin/CommentsController.php" />
-        <option value="$PROJECT_DIR$/src/BlogBundle/Entity/Comment.php" />
         <option value="$PROJECT_DIR$/src/BlogBundle/Entity/Billet.php" />
+        <option value="$PROJECT_DIR$/app/config/config_prod.yml" />
+        <option value="$PROJECT_DIR$/src/BlogBundle/Entity/Comment.php" />
       </list>
     </option>
   </component>
@@ -780,21 +813,7 @@
       <workItem from="1491823226711" duration="16802000" />
       <workItem from="1491988058198" duration="51920000" />
       <workItem from="1492509531681" duration="607000" />
-      <workItem from="1492514706590" duration="202000" />
-    </task>
-    <task id="LOCAL-00022" summary="-mise en forme du tableau de modération des commentaires&#10;- funtion deleteCommentsAdmin&#10;">
-      <created>1491306928551</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1491306928551</updated>
-    </task>
-    <task id="LOCAL-00023" summary="-mise en place login / logout + User entity + security avec Nawo">
-      <created>1491323201485</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1491323201485</updated>
+      <workItem from="1492514706590" duration="3695000" />
     </task>
     <task id="LOCAL-00024" summary="-modification html/css block aside&#10;-modification css footer">
       <created>1491328580938</created>
@@ -1125,15 +1144,29 @@
       <option name="project" value="LOCAL" />
       <updated>1492497650309</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="- SI correction">
+      <created>1492514916862</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1492514916862</updated>
+    </task>
+    <task id="LOCAL-00072" summary="- Heroku config">
+      <created>1492523752239</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1492523752239</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255327000" />
+    <option name="totallyTimeSpent" value="258820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18059126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1141,7 +1174,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36877525" sideWeight="0.4974293" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21265142" sideWeight="0.4974293" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1166,7 +1199,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- divers pour insightSensioLabs v3&#10;" />
     <MESSAGE value="- changement favicon" />
     <MESSAGE value="- installation doctrine:migration" />
     <MESSAGE value="- improve InsightSensioLabs quote" />
@@ -1191,23 +1223,14 @@
     <MESSAGE value="- alerte animée des commentaires signalés" />
     <MESSAGE value="- dateSignaled =&gt; null à l'instanciation et null après l'édition" />
     <MESSAGE value="- SI correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="- SI correction" />
+    <MESSAGE value="- Heroku config" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Heroku config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
-          <folding>
-            <element signature="e#1521#1534#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1216,14 +1239,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/.htaccess" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1285,6 +1300,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1324,14 +1340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1112">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1353,13 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1371,14 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1429,16 +1422,16 @@
         <state relative-caret-position="435">
           <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
           <folding>
-            <element signature="e#47#104#0#PHP" expanded="true" />
-            <element signature="e#463#482#1#PHP" expanded="true" />
-            <element signature="e#530#573#0#PHP" expanded="true" />
-            <element signature="e#791#810#1#PHP" expanded="true" />
-            <element signature="e#1084#1103#1#PHP" expanded="true" />
-            <element signature="e#1267#1286#1#PHP" expanded="true" />
-            <element signature="e#1912#1931#1#PHP" expanded="true" />
-            <element signature="e#1974#2020#0#PHP" expanded="true" />
-            <element signature="e#2530#2549#1#PHP" expanded="true" />
-            <element signature="e#2592#2637#0#PHP" expanded="true" />
+            <element signature="e#47#104#0#PHP" expanded="false" />
+            <element signature="e#463#482#1#PHP" expanded="false" />
+            <element signature="e#530#573#0#PHP" expanded="false" />
+            <element signature="e#791#810#1#PHP" expanded="false" />
+            <element signature="e#1084#1103#1#PHP" expanded="false" />
+            <element signature="e#1267#1286#1#PHP" expanded="false" />
+            <element signature="e#1912#1931#1#PHP" expanded="false" />
+            <element signature="e#1974#2020#0#PHP" expanded="false" />
+            <element signature="e#2530#2549#1#PHP" expanded="false" />
+            <element signature="e#2592#2637#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1468,6 +1461,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1475,6 +1469,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1483,18 +1478,18 @@
         <state relative-caret-position="347">
           <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
           <folding>
-            <element signature="e#41#86#0#PHP" expanded="true" />
-            <element signature="e#871#890#1#PHP" expanded="true" />
-            <element signature="e#1061#1090#0#PHP" expanded="true" />
-            <element signature="e#1282#1301#1#PHP" expanded="true" />
-            <element signature="e#1368#1388#1#PHP" expanded="true" />
-            <element signature="e#1445#1474#0#PHP" expanded="true" />
-            <element signature="e#1735#1754#1#PHP" expanded="true" />
-            <element signature="e#1823#1843#1#PHP" expanded="true" />
-            <element signature="e#2396#2409#0#PHP" expanded="true" />
-            <element signature="e#2536#2573#0#PHP" expanded="true" />
-            <element signature="e#2868#2888#1#PHP" expanded="true" />
-            <element signature="e#3114#3127#0#PHP" expanded="true" />
+            <element signature="e#41#86#0#PHP" expanded="false" />
+            <element signature="e#871#890#1#PHP" expanded="false" />
+            <element signature="e#1061#1090#0#PHP" expanded="false" />
+            <element signature="e#1282#1301#1#PHP" expanded="false" />
+            <element signature="e#1368#1388#1#PHP" expanded="false" />
+            <element signature="e#1445#1474#0#PHP" expanded="false" />
+            <element signature="e#1735#1754#1#PHP" expanded="false" />
+            <element signature="e#1823#1843#1#PHP" expanded="false" />
+            <element signature="e#2396#2409#0#PHP" expanded="false" />
+            <element signature="e#2536#2573#0#PHP" expanded="false" />
+            <element signature="e#2868#2888#1#PHP" expanded="false" />
+            <element signature="e#3114#3127#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1536,33 +1531,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BlogBundle/Controller/Admin/CommentsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="685">
           <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
           <folding>
-            <element signature="e#47#104#0#PHP" expanded="true" />
-            <element signature="e#403#423#1#PHP" expanded="true" />
-            <element signature="e#475#520#0#PHP" expanded="true" />
-            <element signature="e#747#767#1#PHP" expanded="true" />
-            <element signature="e#852#871#1#PHP" expanded="true" />
-            <element signature="e#931#984#0#PHP" expanded="true" />
-            <element signature="e#1244#1264#1#PHP" expanded="true" />
-            <element signature="e#1344#1397#0#PHP" expanded="true" />
-            <element signature="e#1657#1677#1#PHP" expanded="true" />
-            <element signature="e#1734#1787#0#PHP" expanded="true" />
-            <element signature="e#2008#2028#1#PHP" expanded="true" />
-            <element signature="e#2309#2329#1#PHP" expanded="true" />
-            <element signature="e#2494#2514#1#PHP" expanded="true" />
-            <element signature="e#2876#2896#1#PHP" expanded="true" />
+            <element signature="e#47#104#0#PHP" expanded="false" />
+            <element signature="e#403#423#1#PHP" expanded="false" />
+            <element signature="e#475#520#0#PHP" expanded="false" />
+            <element signature="e#747#767#1#PHP" expanded="false" />
+            <element signature="e#852#871#1#PHP" expanded="false" />
+            <element signature="e#931#984#0#PHP" expanded="false" />
+            <element signature="e#1244#1264#1#PHP" expanded="false" />
+            <element signature="e#1344#1397#0#PHP" expanded="false" />
+            <element signature="e#1657#1677#1#PHP" expanded="false" />
+            <element signature="e#1734#1787#0#PHP" expanded="false" />
+            <element signature="e#2008#2028#1#PHP" expanded="false" />
+            <element signature="e#2309#2329#1#PHP" expanded="false" />
+            <element signature="e#2494#2514#1#PHP" expanded="false" />
+            <element signature="e#2876#2896#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1590,19 +1577,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/Billet.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="174" column="9" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="53" column="39" selection-start-line="46" selection-start-column="0" selection-end-line="53" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/Billet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2580">
+          <caret line="174" column="9" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlogBundle/Entity/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding>
+            <element signature="e#74#106#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
