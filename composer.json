@@ -59,7 +59,7 @@
             "@symfony-scripts"
         ],
         "compile": [
-            "php bin/console assets:install"
+            "php bin/console assets:install web"
         ]
     },
     "extra": {
