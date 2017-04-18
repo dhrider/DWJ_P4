@@ -59,7 +59,7 @@
             "@symfony-scripts"
         ],
         "compile": [
-            "php bin/console assetic:dump"
+            "php bin/console assets:install"
         ]
     },
     "extra": {
