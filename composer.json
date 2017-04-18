@@ -59,7 +59,7 @@
             "@symfony-scripts"
         ],
         "compile": [
-            "bin/console assetic:dump"
+            "bin/console assetic:dump --env=prod --no-debug"
         ]
     },
     "extra": {
