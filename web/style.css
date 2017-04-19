@@ -1,0 +1,82 @@
+body {
+    width: 100%;
+    height: auto;
+}
+
+.icon-bar {
+    background-color: black;
+}
+
+.navbar-brand {
+    margin: 0;
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.navbar-nav a {
+    color: black;
+}
+
+#content {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.comments {
+    clear: both;
+}
+
+.comments .odd {
+    background: #eee;
+}
+
+.comment {
+    position: relative;
+}
+
+#signalementComment {
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
+
+#okSignalement {
+    background-color:red;
+    color: white;
+    padding: 2px;
+}
+
+.signaled {
+    color: red;
+}
+
+.signaled:hover {
+    color: red;
+}
+
+#billetsChronologie h3 {
+    margin-top: 10px;
+}
+
+#listeBillets {
+    text-align: center;
+}
+
+#listeComments h4 {
+    text-align: center;
+}
+
+td, th {
+    text-align: center;
+}
+
+.footer {
+    background-color: #E3E2E2;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+}
