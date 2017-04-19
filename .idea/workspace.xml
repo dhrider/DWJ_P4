@@ -35,8 +35,8 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+            <state relative-caret-position="435">
+              <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -857,14 +857,7 @@
       <workItem from="1491823226711" duration="16802000" />
       <workItem from="1491988058198" duration="51920000" />
       <workItem from="1492509531681" duration="607000" />
-      <workItem from="1492514706590" duration="10894000" />
-    </task>
-    <task id="LOCAL-00042" summary="- improve InsightSensioLabs quote">
-      <created>1492007349187</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1492007349187</updated>
+      <workItem from="1492514706590" duration="10986000" />
     </task>
     <task id="LOCAL-00043" summary="- improve InsightSensioLabs quote">
       <created>1492008790966</created>
@@ -1202,11 +1195,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492536784170</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="- compile for heroku">
+      <created>1492582988221</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1492582988221</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266019000" />
+    <option name="totallyTimeSpent" value="266111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1243,7 +1243,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- bad composer.json =&gt; autoload =&gt; psr-4" />
     <MESSAGE value="- adding in composer.json" />
     <MESSAGE value="- change in config.yml" />
     <MESSAGE value="- change secret&#10;- change session name" />
@@ -1268,7 +1267,8 @@
     <MESSAGE value="- Procfile config" />
     <MESSAGE value="- composer.json =&gt; script : compile for heroku" />
     <MESSAGE value="- erreur ressource/public for heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="- erreur ressource/public for heroku" />
+    <MESSAGE value="- compile for heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="- compile for heroku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1697,8 +1697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+        <state relative-caret-position="435">
+          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
           <folding />
         </state>
       </provider>
