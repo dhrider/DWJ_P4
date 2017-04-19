@@ -35,8 +35,8 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+            <state relative-caret-position="390">
+              <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -857,14 +857,7 @@
       <workItem from="1491823226711" duration="16802000" />
       <workItem from="1491988058198" duration="51920000" />
       <workItem from="1492509531681" duration="607000" />
-      <workItem from="1492514706590" duration="10434000" />
-    </task>
-    <task id="LOCAL-00041" summary="- improve InsightSensioLabs quote">
-      <created>1491998013370</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1491998013370</updated>
+      <workItem from="1492514706590" duration="10894000" />
     </task>
     <task id="LOCAL-00042" summary="- improve InsightSensioLabs quote">
       <created>1492007349187</created>
@@ -1202,11 +1195,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492536662762</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="- erreur ressource/public for heroku">
+      <created>1492536784170</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1492536784170</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265559000" />
+    <option name="totallyTimeSpent" value="266019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1697,8 +1697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        <state relative-caret-position="390">
+          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
           <folding />
         </state>
       </provider>
