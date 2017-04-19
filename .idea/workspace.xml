@@ -75,8 +75,8 @@
       <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="11" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="11" />
+            <state relative-caret-position="345">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -883,14 +883,7 @@
       <workItem from="1491823226711" duration="16802000" />
       <workItem from="1491988058198" duration="51920000" />
       <workItem from="1492509531681" duration="607000" />
-      <workItem from="1492514706590" duration="21320000" />
-    </task>
-    <task id="LOCAL-00058" summary="- routes methods&#10;">
-      <created>1492085460778</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1492085460778</updated>
+      <workItem from="1492514706590" duration="21627000" />
     </task>
     <task id="LOCAL-00059" summary="- correct psr-4">
       <created>1492101490150</created>
@@ -1228,11 +1221,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492610831499</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="-  conf heroku">
+      <created>1492610920221</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1492610920221</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276445000" />
+    <option name="totallyTimeSpent" value="276752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1727,8 +1727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="11" />
+        <state relative-caret-position="345">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
