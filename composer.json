@@ -60,7 +60,7 @@
         ],
         "compile": [
             "rm web/app_dev.php",
-            "php bin/console assets:install --symlink"
+            "php bin/console assets:install --relative"
         ]
     },
     "extra": {
