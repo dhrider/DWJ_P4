@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac262eb-7692-4835-8a3d-103e7d92850d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/404.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/404.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/style.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/404.png" afterPath="$PROJECT_DIR$/web/images/404.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/script.js" afterPath="$PROJECT_DIR$/web/js/script.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/TwigBundle/Views/Exception/error404.html.twig" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/Views/Exception/error404.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
@@ -67,21 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="961">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="error404.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="error404.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/Views/Exception/error404.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -152,8 +154,8 @@
         <option value="$PROJECT_DIR$/src/BlogBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/Views/Exception/error404.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -308,28 +310,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlogDwjP4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlogDwjP4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -782,10 +762,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\BlogDwjP4\web" />
+      <recent name="C:\wamp64\www\BlogDwjP4\web\bundles\blog\images" />
+      <recent name="C:\wamp64\www\BlogDwjP4\web\bundles\blog\css" />
+      <recent name="C:\wamp64\www\BlogDwjP4\web\bundles\blog\js" />
       <recent name="C:\wamp64\www\BlogDwjP4\src\BlogBundle\Form\Type" />
-      <recent name="C:\wamp64\www\BlogDwjP4\src\BlogBundle\Entity" />
-      <recent name="C:\wamp64\www\BlogDwjP4\src\BlogBundle\Resources\views\Comments" />
-      <recent name="C:\wamp64\www\BlogDwjP4\src\BlogBundle\Resources\views\Billets" />
     </key>
   </component>
   <component name="RunManager">
@@ -870,14 +850,7 @@
       <workItem from="1491823226711" duration="16802000" />
       <workItem from="1491988058198" duration="51920000" />
       <workItem from="1492509531681" duration="607000" />
-      <workItem from="1492514706590" duration="14776000" />
-    </task>
-    <task id="LOCAL-00049" summary="- add htmlpurifier">
-      <created>1492071392825</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1492071392825</updated>
+      <workItem from="1492514706590" duration="15211000" />
     </task>
     <task id="LOCAL-00050" summary="- routes methods">
       <created>1492072655053</created>
@@ -1215,11 +1188,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492584865809</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="-  dossier web : css + js for heroku">
+      <created>1492592412264</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1492592412264</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269901000" />
+    <option name="totallyTimeSpent" value="270336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1256,7 +1236,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- adding in composer.json" />
     <MESSAGE value="- change in config.yml" />
     <MESSAGE value="- change secret&#10;- change session name" />
     <MESSAGE value="- change parameters" />
@@ -1281,7 +1260,8 @@
     <MESSAGE value="- composer.json =&gt; script : compile for heroku" />
     <MESSAGE value="- erreur ressource/public for heroku" />
     <MESSAGE value="- compile for heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="- compile for heroku" />
+    <MESSAGE value="-  dossier web : css + js for heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="-  dossier web : css + js for heroku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1654,7 +1634,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/style.css">
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1702,18 +1682,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/Views/Exception/error404.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/Views/Exception/error404.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
           <folding />
         </state>
       </provider>
