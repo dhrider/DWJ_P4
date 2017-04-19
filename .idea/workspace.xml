@@ -65,8 +65,8 @@
       <file leaf-file-name="apache_app.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apache_app.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="40" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,8 +75,8 @@
       <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="295">
+              <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -883,21 +883,7 @@
       <workItem from="1491823226711" duration="16802000" />
       <workItem from="1491988058198" duration="51920000" />
       <workItem from="1492509531681" duration="607000" />
-      <workItem from="1492514706590" duration="21627000" />
-    </task>
-    <task id="LOCAL-00059" summary="- correct psr-4">
-      <created>1492101490150</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1492101490150</updated>
-    </task>
-    <task id="LOCAL-00060" summary="- création page : error404 + error500">
-      <created>1492101974557</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1492101974558</updated>
+      <workItem from="1492514706590" duration="22431000" />
     </task>
     <task id="LOCAL-00061" summary="- codage page : error404 + error500">
       <created>1492103213702</created>
@@ -1228,11 +1214,25 @@
       <option name="project" value="LOCAL" />
       <updated>1492610920221</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="-  htaccess Heroku">
+      <created>1492611238623</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1492611238623</updated>
+    </task>
+    <task id="LOCAL-00109" summary="-  htaccess Heroku">
+      <created>1492611863542</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1492611863542</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276752000" />
+    <option name="totallyTimeSpent" value="277556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1269,7 +1269,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- add htmlpurifier" />
     <MESSAGE value="- config rules" />
     <MESSAGE value="- routes methods" />
     <MESSAGE value="- composer" />
@@ -1294,7 +1293,8 @@
     <MESSAGE value="-  php version  for heroku" />
     <MESSAGE value="-  Procfile heroku" />
     <MESSAGE value="-  conf heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="-  conf heroku" />
+    <MESSAGE value="-  htaccess Heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="-  htaccess Heroku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1719,16 +1719,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apache_app.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="295">
+          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
           <folding />
         </state>
       </provider>
