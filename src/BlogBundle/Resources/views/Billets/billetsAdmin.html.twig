@@ -18,7 +18,7 @@
                 <tbody id="corpsTableauBillets">
                     {% for billet in billets %}
                         <tr>
-                            <td style="text-align: left"><a href="{{ path('blog_billet', {'id' : billet.id}) }}">{{ billet.title }}</a></td>
+                            <td id="tableauBilletColTitre">{{ billet.title }}</td>
                             <td>{{ billet.date | date('d-m-Y') }}</td>
                             <td>{{ billet.dateUpdate | date('d-m-Y') }}</td>
                             {% if billet.getNumberOfComments %}

@@ -3,7 +3,8 @@
 {% block body %}
     <div class="col-md-10">
         <div class="container-fluid">
-            <h2><u>Modération des commentaires du billet :</u><span style="color: chocolate">{{ billet.title }}</span></h2>
+            <h2><u>Modération des commentaires du billet : </u></h2>
+            <h3 class="couleur">{{ billet.title }}</h3>
             <br/>
             <table class="table table-bordered table-striped" id="tableauCommentsByBillet">
                 <thead>
@@ -21,8 +22,12 @@
                         {% else %}
                             <tr>
                         {% endif %}
-                            <td style="text-align: left; padding-left: 5px">{{ comment.author }}</td>
-                            <td style="text-align: left; padding-left: 5px">
+                            <td class="commentadminTabCol">
+                                <a href="{{ path('blog_adminCommentsByAuthor', {'author' : comment.author}) }}" title="Tous les commentaires de {{ comment.author }}">
+                                    {{ comment.author }}
+                                </a>
+                            </td>
+                            <td class="commentadminTabCol">
                                 {% if comment.content | length >= 65 %}
                                     {{ comment.content | truncate(65) }}
                                     {{ include('BlogBundle:Comments:commentModalDialog.html.twig') }}
@@ -31,8 +36,9 @@
                                 {% endif %}
                             </td>
                             <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
-                            <td>
-                                {% if comment.signaled %}
+                        <td>
+                            {% if comment.signaled %}
+                                    <span class="glyphicon glyphicon-warning-sign signaled" title="Commentaire signalé"></span>
                                     {{ include('BlogBundle:Comments:commentModalEdit.html.twig') }}
                                 {% endif %}
                                 {{ include('BlogBundle:Comments:commentModalDelete.html.twig') }}
@@ -41,7 +47,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <a href="javascript:history.go(-1)" class="btn btn-default" type="button">
+            <a href="{{ path('blog_adminBillets') }}" class="btn btn-default" type="button">
                 <span class="glyphicon glyphicon-arrow-left"></span> Retour liste billets
             </a>
         </div>

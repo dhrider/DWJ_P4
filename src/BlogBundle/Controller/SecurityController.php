@@ -1,4 +1,5 @@
 <?php
+// src/BlogBundle/Controller/Admin/SecurityController.php
 
 namespace BlogBundle\Controller;
 

@@ -1,3 +1,5 @@
+/* base.html.twig ET page entière */
+
 body {
     width: 100%;
     height: auto;
@@ -24,6 +26,112 @@ body {
     margin-bottom: 20px;
 }
 
+.footer {
+    background-color: #E3E2E2;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+}
+
+td, th {
+    text-align: center;
+}
+
+.couleur {
+    color: chocolate;
+}
+
+.commentadminTabCol {
+    text-align: left;
+    padding-left: 5px;
+}
+
+
+
+/*/////////////////////////////////////////////////////*/
+
+
+
+/* index.html.twig */
+
+#billetsChronologie h3 {
+    margin-top: 10px;
+}
+
+#billetDate {
+    color: chocolate;
+}
+
+#contenu {
+    text-align: justify;
+}
+
+.billetFooter {
+    border-bottom: 1px solid black;
+}
+
+
+
+/*/////////////////////////////////////////////////////*/
+
+
+
+/* aside.html.twig */
+
+#listeBillets {
+    text-align: center;
+}
+
+#listeComments h4 {
+    text-align: center;
+}
+
+
+
+/*/////////////////////////////////////////////////////*/
+
+
+
+/* asideAdmin.html.twig */
+
+#titleAsideAdmin {
+    text-align: center;
+}
+
+
+
+/*/////////////////////////////////////////////////////*/
+
+
+
+/* billet.html.twig */
+
+#billetContent {
+    text-align: justify;
+}
+
+
+
+/*/////////////////////////////////////////////////////*/
+
+
+
+/* billetAdmin.html.twig */
+
+#tableauBilletColTitre {
+    text-align: left;
+}
+
+
+
+/*/////////////////////////////////////////////////////*/
+
+
+
+/* comment.html.twig */
+
 .comments {
     clear: both;
 }
@@ -36,6 +144,10 @@ body {
     position: relative;
 }
 
+#commentFormTitle {
+    margin-top: 0;
+}
+
 #signalementComment {
     position: absolute;
     top: 25%;
@@ -43,10 +155,19 @@ body {
 }
 
 #okSignalement {
-    background-color:red;
+    background-color: red;
     color: white;
     padding: 2px;
+    margin-bottom: 5px;
 }
+
+
+
+/*/////////////////////////////////////////////////////*/
+
+
+
+/* commentsAdmin.html.twig */
 
 .signaled {
     color: red;
@@ -54,29 +175,4 @@ body {
 
 .signaled:hover {
     color: red;
-}
-
-#billetsChronologie h3 {
-    margin-top: 10px;
-}
-
-#listeBillets {
-    text-align: center;
-}
-
-#listeComments h4 {
-    text-align: center;
-}
-
-td, th {
-    text-align: center;
-}
-
-.footer {
-    background-color: #E3E2E2;
-}
-
-.footer p {
-    margin: 0;
-    text-align: center;
 }

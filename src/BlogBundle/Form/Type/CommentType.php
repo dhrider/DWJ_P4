@@ -1,4 +1,5 @@
 <?php
+// sr/BlongBundle/Form/Type/CommentType.php
 
 namespace BlogBundle\Form\Type;
 
@@ -11,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CommentType extends AbstractType
 {
+    // création d'un formulaire de commentaire
     /**
      * {@inheritdoc}
      */
@@ -23,7 +25,7 @@ class CommentType extends AbstractType
                     'required',
                     'placeholder' => 'Entrez votre nom'
                 ),
-                'label' => false
+                'label' => false // on cache le label
             ))
             ->add('content',   TextareaType::class, array(
                 'attr' => array(
@@ -31,7 +33,7 @@ class CommentType extends AbstractType
                     'required',
                     'placeholder' => 'Votre commentaire'
                 ),
-                'label' => false
+                'label' => false // on cache le label
             ))
             ->add('submit',     SubmitType::class, array(
                 'attr' => array(

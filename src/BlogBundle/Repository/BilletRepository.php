@@ -1,5 +1,7 @@
 <?php
 
+// src/BlogBundle/Repository/BilletRepository.php
+
 namespace BlogBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
@@ -13,13 +15,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class BilletRepository extends EntityRepository
 {
+    // fonction pour trouver tous les billets
     public function findBillets()
     {
         $qb = $this->createQueryBuilder('t');
 
         $qb
             ->select('t')
-            ->orderBy('t.id', 'DESC')
+            ->orderBy('t.id', 'DESC') // triés par id décroissant
         ;
 
         return $qb
@@ -28,14 +31,15 @@ class BilletRepository extends EntityRepository
             ;
     }
 
+    // function pour trouver les 5 derniers billets
     public function findFiveLastTitle()
     {
         $qb = $this->createQueryBuilder('t');
 
         $qb
             ->select('t')
-            ->orderBy('t.id', 'DESC')
-            ->setMaxResults(5)
+            ->orderBy('t.id', 'DESC') // triés par id décroissant
+            ->setMaxResults(5) // limité à 5 résultats
         ;
 
         return $qb
@@ -44,16 +48,17 @@ class BilletRepository extends EntityRepository
         ;
     }
 
+    // function récupérant tous les billets pour la pagination
     public function paginationBillet()
     {
         $qb = $this->createQueryBuilder('p');
 
         $qb
             ->select('p')
-            ->orderBy('p.id', 'DESC')
+            ->orderBy('p.id', 'DESC') // triés par id décroissant
         ;
 
-        return $qb;
+        return $qb; // on return direction la query et non le résultat (nécessaire pour le controlleur)
     }
 }
 

@@ -5,15 +5,15 @@
         <div id="billetsChronologie">
             {%  for billet in pager.currentPageResults %}
                 <article class="billetUnique">
-                    <h4>Publié le : <span style="color: chocolate">{{ billet.date | date('d-m-Y') }}</span></h4>
+                    <h4>Publié le : <span id="billetDate">{{ billet.date | date('d-m-Y') }}</span></h4>
                     <header>
                         <a href="{{ path('blog_billet', {'id' : billet.id}) }}"><h3>{{ billet.title }}</h3></a>
                     </header>
                     <div>
-                        <p id="contenu" style="text-align: justify">{{ billet.content | truncate(500) | purify }}</p>
+                        <p id="contenu">{{ billet.content | truncate(500) | purify }}</p>
                         <p><a href="{{ path('blog_billet', {'id' : billet.id}) }}">Lire la suite...</a></p>
                     </div>
-                    <footer class="billetFooter" style="border-bottom: 1px solid black;">
+                    <footer class="billetFooter">
                         <a href="{{ path('blog_billet', {'id' : billet.id}) }}#comments">{{ billet.getNumberOfComments }} commentaire(s)</a>
                         <br/>
                     </footer>

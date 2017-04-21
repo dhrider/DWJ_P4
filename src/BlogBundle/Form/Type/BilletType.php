@@ -1,4 +1,5 @@
 <?php
+// src/BlogBundle/Form/Type/BilletType.php
 
 namespace BlogBundle\Form\Type;
 
@@ -11,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class BilletType extends AbstractType
 {
+    // création du formulaire d'un billet
     /**
      * {@inheritdoc}
      */
@@ -25,8 +27,9 @@ class BilletType extends AbstractType
             ))
             ->add('content',        TextareaType::class, array(
                 'attr' => array(
-                    'class' => 'mce-tinymce',
-                    'required'
+                    'class' => 'mce-tinymce', // utilisé pour afficher TinyMce
+                    'required',
+                    'style' => 'height : 275px' // hauteur du textarea de TinyMce
                 ),
                 'label' => 'Texte :'
             ))

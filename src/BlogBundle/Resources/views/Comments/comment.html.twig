@@ -3,9 +3,9 @@
         <header>
             <p>
                 <u>
-                    <span style="color: chocolate">{{ comment.author }}</span> a commenté le
-                    <span style="color: chocolate">{{ comment.date | date('d-m-Y') }}</span>  à
-                    <span style="color: chocolate">{{ comment.date | date('H:i:s')}}</span>
+                    <span class="couleur">{{ comment.author }} a commenté le </span>
+                    <span class="couleur">{{ comment.date | date('d-m-Y') }} à </span>
+                    <span class="couleur">{{ comment.date | date('H:i:s')}}</span>
                 </u>
                 <div id="signalementComment">
                     {%  if not comment.signaled %}
@@ -26,7 +26,7 @@
 <hr/>
 <div class="well container-fluid col-md-5">
     {{ form_start(form) }}
-        <h3 style="margin-top: 0; margin-bottom: 5px">Votre commentaire :</h3>
+        <h3 id="commentFormTitle">Votre commentaire :</h3>
         {{ form_row(form.author) }}
         {{ form_row(form.content) }}
         {{ form_widget(form.submit) }}

@@ -19,10 +19,12 @@
                 <tbody id="corpsTableauCommentsSignaled">
                 {% for comment in comments %}
                     <tr>
-                        <td style="text-align: left; padding-left: 5px">
-                            <a href="{{ path('blog_adminCommentsByAuthor', {'author' : comment.author}) }}">{{ comment.author }}</a>
+                        <td class="commentadminTabCol">
+                            <a href="{{ path('blog_adminCommentsByAuthor', {'author' : comment.author}) }}" title="Aller aux commentaires de {{ comment.author }}">
+                                {{ comment.author }}
+                            </a>
                         </td>
-                        <td style="text-align: left; padding-left: 5px">
+                        <td class="commentadminTabCol">
                             {% if comment.content | length >= 65 %}
                                 {{ comment.content | truncate(65) }}
                                 {{ include('BlogBundle:Comments:commentModalDialog.html.twig') }}
@@ -30,8 +32,10 @@
                                 {{ comment.content }}
                             {% endif %}
                         </td>
-                        <td style="text-align: left; padding-left: 5px">
-                            <a href="{{ path('blog_billet', {'id' : comment.billet.id}) }}">{{ comment.billet.title }}</a>
+                        <td class="commentadminTabCol">
+                            <a href="{{ path('blog_adminCommentsByBillet', {'id' : comment.billet.id}) }}" title="Aller aux commentaires de ce billet">
+                                {{ comment.billet.title }}
+                            </a>
                         </td>
                         <td>{{ comment.date | date('d-m-Y') }} à {{ comment.date | date('H:i:s')}}</td>
                         <td>{{ comment.dateSignaled | date('d-m-Y') }} à {{ comment.dateSignaled | date('H:i:s')}}</td>
