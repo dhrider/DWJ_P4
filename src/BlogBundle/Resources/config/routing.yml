@@ -27,7 +27,6 @@ blog_adminBillets:
 
 blog_adminBillet_delete:
     path:    /admin/billets/delete
-    methods: [ delete ]
     defaults: { _controller: BlogBundle:Admin/Blog:adminBilletDelete }
 
 blog_adminBillet_add:
@@ -67,7 +66,6 @@ blog_adminComments_signaled:
 
 blog_adminComment_delete:
     path:    /admin/comments/delete
-    methods: [ delete ]
     defaults: { _controller: BlogBundle:Admin/Comments:adminCommentDelete }
 
 blog_adminComment_edit:

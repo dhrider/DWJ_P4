@@ -19,7 +19,7 @@ class BilletRepository extends EntityRepository
 
         $qb
             ->select('t')
-            ->orderBy('t.date', 'DESC')
+            ->orderBy('t.id', 'DESC')
         ;
 
         return $qb
@@ -34,7 +34,7 @@ class BilletRepository extends EntityRepository
 
         $qb
             ->select('t')
-            ->orderBy('t.date', 'DESC')
+            ->orderBy('t.id', 'DESC')
             ->setMaxResults(5)
         ;
 
@@ -50,7 +50,7 @@ class BilletRepository extends EntityRepository
 
         $qb
             ->select('p')
-            ->orderBy('p.date', 'DESC')
+            ->orderBy('p.id', 'DESC')
         ;
 
         return $qb;
