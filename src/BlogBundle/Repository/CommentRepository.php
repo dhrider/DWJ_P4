@@ -22,6 +22,7 @@ class CommentRepository extends EntityRepository
             ->select('c')
             ->where('c.billet = :id') // condition = id du billet
             ->setParameter('id', $id)
+            ->orderBy('c.id', 'ASC')
         ;
 
         return $qb->getQuery()->getResult();
