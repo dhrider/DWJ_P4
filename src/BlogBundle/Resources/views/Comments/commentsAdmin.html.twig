@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody id="corpsTableauComments">
-                    {% for comment in comments %}
+                    {% for comment in pager.currentPageResults %}
                         {% if comment.signaled %}
                             <tr class="danger">
                         {% else %}
@@ -56,6 +56,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="pagerfanta">
+                {{ pagerfanta(pager, 'twitter_bootstrap3', {'routeName' : 'blog_admin_comments_paginated'}) }}
+            </div>
         </div>
     </div>
 {% endblock %}

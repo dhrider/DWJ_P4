@@ -16,7 +16,7 @@
                     </tr>
                 </thead>
                 <tbody id="corpsTableauBillets">
-                    {% for billet in billets %}
+                    {% for billet in pager.currentPageResults %}
                         <tr>
                             <td id="tableauBilletColTitre">{{ billet.title }}</td>
                             <td>{{ billet.date | date('d-m-Y') }}</td>
@@ -68,6 +68,9 @@
             <a href="{{ path('blog_adminBillet_add') }}" type="button" class="btn btn-primary pull-right" title="Add">
                 <span class="glyphicon glyphicon-pencil"> Nouveau billet</span>
             </a>
+            <div class="pagerfanta">
+                {{ pagerfanta(pager, 'twitter_bootstrap3', {'routeName' : 'blog_admin_billets_paginated'}) }}
+            </div>
         </div>
     </div>
 

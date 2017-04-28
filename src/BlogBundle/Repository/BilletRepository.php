@@ -15,20 +15,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class BilletRepository extends EntityRepository
 {
-    // fonction pour trouver tous les billets
-    public function findBillets()
+    // function récupérant tous les billets pour la pagination
+    public function paginationBillet()
     {
-        $qb = $this->createQueryBuilder('t');
+        $qb = $this->createQueryBuilder('p');
 
         $qb
-            ->select('t')
-            ->orderBy('t.id', 'DESC') // triés par id décroissant
+            ->select('p')
+            ->orderBy('p.id', 'DESC') // triés par id décroissant
         ;
 
-        return $qb
-            ->getQuery()
-            ->getResult()
-            ;
+        return $qb; // on return direction la query et non le résultat (nécessaire pour le controlleur)
     }
 
     // function pour trouver les 5 derniers billets
@@ -46,19 +43,6 @@ class BilletRepository extends EntityRepository
             ->getQuery()
             ->getResult()
         ;
-    }
-
-    // function récupérant tous les billets pour la pagination
-    public function paginationBillet()
-    {
-        $qb = $this->createQueryBuilder('p');
-
-        $qb
-            ->select('p')
-            ->orderBy('p.id', 'DESC') // triés par id décroissant
-        ;
-
-        return $qb; // on return direction la query et non le résultat (nécessaire pour le controlleur)
     }
 }
 

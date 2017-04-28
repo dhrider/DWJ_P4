@@ -6,22 +6,37 @@ namespace BlogBundle\Controller\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
 
 class CommentsController extends Controller
 {
     // page d'administration des commentaires
-    public function adminCommentsAction()
+    /**
+     * @param $page
+     * @Route("/admin/comment/{page}", name="blog_admin_comments_paginated", defaults={"page" = 1})
+     * @Template()
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function adminCommentsAction($page = 1)
     {
         $em  = $this->getDoctrine()->getManager();
 
-        $comments = $em->getRepository('BlogBundle:Comment')->findAllComments();
+        // gestion de la pagination
+        $adapter = new DoctrineORMAdapter($em->getRepository('BlogBundle:Comment')->findAllCommentsPaginated());
+        $pager = new Pagerfanta($adapter);
+        $pager->setMaxPerPage(10);
+        $pager->setCurrentPage($page);
 
         return $this->render('BlogBundle:Comments:commentsAdmin.html.twig', array(
-            'comments' => $comments
+            'pager' => $pager
         ));
     }
 
     // page d'administration des commentaires d'un billet en fonction de l'id du billet
+
     public function adminCommentsByBilletAction(Request $request)
     {
         $em  = $this->getDoctrine()->getManager();

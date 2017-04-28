@@ -22,7 +22,7 @@ class CommentRepository extends EntityRepository
             ->select('c')
             ->where('c.billet = :id') // condition = id du billet
             ->setParameter('id', $id)
-            ->orderBy('c.id', 'ASC')
+            ->orderBy('c.id', 'DESC')
         ;
 
         return $qb->getQuery()->getResult();
@@ -72,19 +72,18 @@ class CommentRepository extends EntityRepository
         return $qb->getQuery()->getResult();
     }
 
-    // fonction pour trouver tous les commentaires
-    public function findAllComments()
+    // fonction pour trouver tous les commentaires pour la pagination
+    public function findAllCommentsPaginated()
     {
         $qb = $this->createQueryBuilder('c');
-
         $qb
             ->select('c')
+            ->orderBy('c.id', 'DESC') // triés par date de création décroissant
             ->leftJoin('c.billet', 'billet') // on fait une jointure avec la table billet
             ->addSelect('billet') // on ajoute les billets au select
-            ->orderBy('c.date', 'DESC') // triés par date de création décroissant
         ;
 
-        return $qb->getQuery()->getResult();
+        return $qb;
     }
 
 }

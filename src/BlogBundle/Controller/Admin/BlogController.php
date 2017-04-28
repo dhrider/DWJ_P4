@@ -6,20 +6,35 @@ namespace BlogBundle\Controller\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use BlogBundle\Form\Type\BilletType;
 use BlogBundle\Entity\Billet;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+
 
 class BlogController extends Controller
 {
     // Page administration des billets
-    public function adminBilletsAction()
+    /**
+     * @param $page
+     * @Route("/admin/billet/{page}", name="blog_admin_billets_paginated", defaults={"page" = 1})
+     * @Template()
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function adminBilletsAction($page = 1)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $billets = $em->getRepository('BlogBundle:Billet')->findBillets();
+        // gestion de la pagination
+        $adapter = new DoctrineORMAdapter($em->getRepository('BlogBundle:Billet')->paginationBillet());
+        $pager = new Pagerfanta($adapter);
+        $pager->setMaxPerPage(10);
+        $pager->setCurrentPage($page);
 
         return $this->render('BlogBundle:Billets:billetsAdmin.html.twig', array(
-            'billets' => $billets
+            'pager' => $pager
         ));
     }
 

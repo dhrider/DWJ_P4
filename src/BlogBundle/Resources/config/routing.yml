@@ -93,3 +93,11 @@ blog_logout:
 blog:
     resource: "@BlogBundle/Controller/BlogController.php"
     type:     annotation
+
+blog_admin:
+    resource: "@BlogBundle/Controller/Admin/BlogController.php"
+    type:     annotation
+
+blog_admin_controller:
+    resource: "@BlogBundle/Controller/Admin/CommentsController.php"
+    type:     annotation
