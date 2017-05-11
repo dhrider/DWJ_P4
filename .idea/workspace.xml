@@ -48,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="69" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+              <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -62,7 +62,7 @@
             <state relative-caret-position="150">
               <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#196#209#0#Twig" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -862,14 +862,7 @@
       <workItem from="1494334331016" duration="502000" />
       <workItem from="1494488194430" duration="254000" />
       <workItem from="1494489221272" duration="120000" />
-      <workItem from="1494490647041" duration="5287000" />
-    </task>
-    <task id="LOCAL-00072" summary="- Heroku config">
-      <created>1492523752239</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1492523752239</updated>
+      <workItem from="1494490647041" duration="5501000" />
     </task>
     <task id="LOCAL-00073" summary="- Heroku config">
       <created>1492523908600</created>
@@ -1207,11 +1200,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494503891139</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="-page 404 : centrage image">
+      <created>1494504176657</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1494504176657</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325060000" />
+    <option name="totallyTimeSpent" value="325274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1248,7 +1248,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- ajout du signalement d'un commentaires =&gt; FRONTEND&#10;" />
     <MESSAGE value="- ajout du signalement d'un commentaires =&gt; BACKEND&#10;" />
     <MESSAGE value="signalement d'un commentaires =&gt; BACKEND V2&#10;" />
     <MESSAGE value="signalement d'un commentaires =&gt; annulation par le modérateur&#10;" />
@@ -1273,7 +1272,8 @@
     <MESSAGE value="- ajout oderBy : requete findCommentsByBilletId" />
     <MESSAGE value="- ajout : Pagination admin billets&#10;- ajout : Pagination admin commentaires&#10;- rectification bouton retour : window.history" />
     <MESSAGE value="-page 404&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="-page 404&#10;" />
+    <MESSAGE value="-page 404 : centrage image" />
+    <option name="LAST_COMMIT_MESSAGE" value="-page 404 : centrage image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1633,7 +1633,7 @@
         <state relative-caret-position="660">
           <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
           <folding>
-            <element signature="e#1536#1555#1#PHP" expanded="true" />
+            <element signature="e#1536#1555#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1667,7 +1667,7 @@
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#196#209#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1685,7 +1685,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="69" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
