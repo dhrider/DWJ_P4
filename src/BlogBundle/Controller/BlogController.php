@@ -62,13 +62,13 @@ class BlogController extends Controller
         // on récupère le billet en fonction de son is
         $billet = $em->getRepository('BlogBundle:Billet')->find($request->get('id'));
 
-        // on récupère tous les commentaires associés à ce billet
-        $comments = $em->getRepository('BlogBundle:Comment')->findCommentsByBilletId($billet->getId());
-
         if (null === $billet)
         {
             throw new NotFoundHttpException("Le billet d'id ".$request->get('id')." n'existe pas.");
         }
+
+        // on récupère tous les commentaires associés à ce billet
+        $comments = $em->getRepository('BlogBundle:Comment')->findCommentsByBilletId($billet->getId());
 
         // on crée un nouveau commentaire (en attente)
         $comment = new Comment();
